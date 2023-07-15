@@ -91,3 +91,20 @@ footer {
     margin-bottom: 10px;
   }
 }
+.menu-categories {background-color: #36393f;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;}
+.cacher {
+  padding: 10px;}
+
+  #elementToHide {
+    display: block; /* ou flex ou inline ou autre, selon le cas */
+  }
+  
+  #elementToHide.hidden {
+    display: none;
+  }
+.cacher a {text-decoration: solid;
+  color: white;}
+  

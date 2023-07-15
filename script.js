@@ -191,10 +191,6 @@ function sortProductsByLastModified(products, sortOrder) {
   return products.sort((a, b) => sortOrder === 'asc' ? a.lastModified - b.lastModified : b.lastModified - a.lastModified);
 }
 
-// Fonction pour trier les produits par magasin
-function sortProductsBySupermarket(products, sortOrder) {
-  return products.sort((a, b) => sortOrder === 'asc' ? a.supermarket.localeCompare(b.supermarket) : b.supermarket.localeCompare(a.supermarket));
-}
 
 
 // Fonction pour initialiser le site
@@ -223,8 +219,6 @@ function init() {
       sortedProducts = sortProductsByName(products, sortOption === 'nameAsc' ? 'asc' : 'desc');
     } else if (sortOption === 'lastModifiedAsc' || sortOption === 'lastModifiedDesc') {
       sortedProducts = sortProductsByLastModified(products, sortOption === 'lastModifiedAsc' ? 'asc' : 'desc');
-    }  else if (sortOption === 'supermarketAsc' || sortOption === 'supermarketDesc') {
-      sortedProducts = sortProductsBySupermarket(products, sortOption === 'supermarketAsc' ? 'asc' : 'desc');
     }
 
     displayProducts(sortedProducts);

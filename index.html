@@ -18,14 +18,33 @@
         <option value="priceDesc">Prix décroissant</option>
         <option value="lastModifiedAsc">Date de modification (ancien)</option>
         <option value="lastModifiedDesc">Date de modification (récent)</option>
-        <option value="supermarket">Magasin</option>
-        <option value="category">Catégorie</option>
       </select>
     </nav>
   </header>
 
   <main>
-    <div id="product-categories"></div>
+    <div class="menu-categories" style="margin-bottom: 20px;">
+      <div id="elementToHide"><div id="product-categories"></div></div>
+    <div class="cacher"><a href="#" id="toggleButton">Cacher</a></div>
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const elementToHide = document.getElementById("elementToHide");
+      const toggleButton = document.getElementById("toggleButton");
+  
+      toggleButton.addEventListener("click", function () {
+        if (elementToHide.classList.contains("hidden")) {
+          elementToHide.classList.remove("hidden");
+          toggleButton.textContent = "Cacher";
+        } else {
+          elementToHide.classList.add("hidden");
+          toggleButton.textContent = "Voir";
+        }
+      });
+    });
+  </script>
 
     <div id="product-list"></div>
   </main>
