@@ -191,15 +191,21 @@ function sortProductsByLastModified(products, sortOrder) {
   return products.sort((a, b) => sortOrder === 'asc' ? a.lastModified - b.lastModified : b.lastModified - a.lastModified);
 }
 
+// Fonction pour trier les produits par magasin
+function sortProductsBySupermarket(products, sortOrder) {
+  return products.sort((a, b) => sortOrder === 'asc' ? a.supermarket.localeCompare(b.supermarket) : b.supermarket.localeCompare(a.supermarket));
+}
+
+
 // Fonction pour initialiser le site
 function init() {
   const categories = [
-    { name: 'Fruits', image: 'https://images.frandroid.com/wp-content/uploads/2023/07/mercedes-eqc-2-1200x797.jpg' },
-    { name: 'Légumes', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/2019_SSC_Tuatara_at_Pebble_Beach_Press_Conference.jpg/640px-2019_SSC_Tuatara_at_Pebble_Beach_Press_Conference.jpg' },
-    { name: 'Viande', image: 'https://cdn-s-www.ledauphine.com/images/ED82BE29-CBAC-40EC-B71C-285CD717A43C/NW_raw/la-voiture-noire-de-bugatti-modele-unique-photo-dr-1608828241.jpg' },
+    { name: 'Fruits', image: 'https://hips.hearstapps.com/hmg-prod/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg' },
+    { name: 'Légumes', image: 'https://upload.wikimedia.org/wikipedia/commons/8/86/L%C3%A9gumes_pour_ratatouille_au_march%C3%A9_d%27Apt.jpg' },
+    { name: 'Viande', image: 'https://i.notretemps.com/1400x787/smart/2023/01/17/illustration-de-viande.jpeg' },
     { name: 'Papier toilette', image: 'https://cdn.webshopapp.com/shops/291748/files/331481689/1000x1000x2/jantex-toiletpapier-premium-40-stuk-3-laags-170-ve.jpg' },
-    { name: 'Eau', image: 'https://www.motorlegend.com/home/img/web/1689261367-mobile.jpg' },
-    { name: 'Lasagne', image: 'https://journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg' },
+    { name: 'Eau', image: 'https://img.passeportsante.net/1200x675/2022-10-07/shutterstock-1280610196.webp' },
+    { name: 'Lasagne', image: 'https://images.radio-canada.ca/v1/alimentation/recette/4x3/lasagne-25129.jpg' },
     { name: 'Tout les produits', image: 'https://media.sudouest.fr/7083913/1000x500/gdfgdfg.jpg?v=1637768353' },
   ];
 
@@ -217,6 +223,8 @@ function init() {
       sortedProducts = sortProductsByName(products, sortOption === 'nameAsc' ? 'asc' : 'desc');
     } else if (sortOption === 'lastModifiedAsc' || sortOption === 'lastModifiedDesc') {
       sortedProducts = sortProductsByLastModified(products, sortOption === 'lastModifiedAsc' ? 'asc' : 'desc');
+    }  else if (sortOption === 'supermarketAsc' || sortOption === 'supermarketDesc') {
+      sortedProducts = sortProductsBySupermarket(products, sortOption === 'supermarketAsc' ? 'asc' : 'desc');
     }
 
     displayProducts(sortedProducts);
