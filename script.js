@@ -1,5 +1,13 @@
 // Données des produits
 const products = [
+    {
+    category: 'Eau',
+    name: 'Pierval Carrefour 1.5L',
+    image: 'https://cdn.carrefour.eu/1200_00167165_5400101161580_01.jpeg',
+    price: 0.65,
+    supermarket: 'Deliveroo Carrefour-express',
+    lastModified: new Date('2023-07-16'),
+  },
   {
     category: 'Pain',
     name: 'Baguette Carrefour 250g',
@@ -100,12 +108,13 @@ function sortProductsByLastModified(products, sortOrder) {
 // Fonction pour initialiser le site
 function init() {
   const categories = [
-    { name: 'Fruits', image: 'https://hips.hearstapps.com/hmg-prod/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg' },
+   /* { name: 'Fruits', image: 'https://hips.hearstapps.com/hmg-prod/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg' },
     { name: 'Légumes', image: 'https://upload.wikimedia.org/wikipedia/commons/8/86/L%C3%A9gumes_pour_ratatouille_au_march%C3%A9_d%27Apt.jpg' },
     { name: 'Viande', image: 'https://i.notretemps.com/1400x787/smart/2023/01/17/illustration-de-viande.jpeg' },
     { name: 'Papier toilette', image: 'https://cdn.webshopapp.com/shops/291748/files/331481689/1000x1000x2/jantex-toiletpapier-premium-40-stuk-3-laags-170-ve.jpg' },
-    { name: 'Eau', image: 'https://img.passeportsante.net/1200x675/2022-10-07/shutterstock-1280610196.webp' },
     { name: 'Lasagne', image: 'https://images.radio-canada.ca/v1/alimentation/recette/4x3/lasagne-25129.jpg' },
+    */
+    { name: 'Eau', image: 'https://img.passeportsante.net/1200x675/2022-10-07/shutterstock-1280610196.webp' },
     { name: 'Pain', image: 'https://www.lanutrition.fr/sites/default/files/styles/article_large/public/ressources/pain_0.jpg?itok=Iw06GBaT' },
     { name: 'Tout les produits', image: 'https://media.sudouest.fr/7083913/1000x500/gdfgdfg.jpg?v=1637768353' },
   ];
