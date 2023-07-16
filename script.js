@@ -1,6 +1,14 @@
 // Données des produits
 const products = [
     {
+    category: 'Entretien',
+    name: 'Lessive Carrefour 18 Tabs',
+    image: 'https://www.zupimages.net/up/23/28/miwj.jpg',
+    price: 5.59,
+    supermarket: 'Deliveroo Carrefour-express',
+    lastModified: new Date('2023-07-16'),
+  },
+    {
     category: 'Eau',
     name: 'Pierval Carrefour 1.5L',
     image: 'https://cdn.carrefour.eu/1200_00167165_5400101161580_01.jpeg',
@@ -116,6 +124,7 @@ function init() {
     */
     { name: 'Eau', image: 'https://img.passeportsante.net/1200x675/2022-10-07/shutterstock-1280610196.webp' },
     { name: 'Pain', image: 'https://www.lanutrition.fr/sites/default/files/styles/article_large/public/ressources/pain_0.jpg?itok=Iw06GBaT' },
+    { name: 'Entretien', image: 'https://www.destockplus.com/upload/300112_124446_PEEL_hvuejMpV.jpg' },  
     { name: 'Tout les produits', image: 'https://media.sudouest.fr/7083913/1000x500/gdfgdfg.jpg?v=1637768353' },
   ];
 
