@@ -1,6 +1,22 @@
 // Données des produits
 const products = [
   {
+    category: 'Pain',
+    name: 'Baguette Carrefour 250g',
+    image: '',
+    price: 0.89,
+    supermarket: 'Carrefour-express',
+    lastModified: new Date('2023-07-16'),
+  },
+  {
+    category: 'Pain',
+    name: 'Baguette Carrefour 250g',
+    image: '',
+    price: 0.89,
+    supermarket: 'Deliveroo Carrefour-express',
+    lastModified: new Date('2023-07-16'),
+  },
+  {
     category: 'Fruits',
     name: 'Pommes Jazz',
     image: 'https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/1055/1/0/_jcr_content/assets/imported-images/BILD_INTERNET23/1055-jazzappels_2310_sfr.jpg/_jcr_content/renditions/original.transform/1250w/img.1681688174803.jpg',
@@ -202,6 +218,7 @@ function init() {
     { name: 'Papier toilette', image: 'https://cdn.webshopapp.com/shops/291748/files/331481689/1000x1000x2/jantex-toiletpapier-premium-40-stuk-3-laags-170-ve.jpg' },
     { name: 'Eau', image: 'https://img.passeportsante.net/1200x675/2022-10-07/shutterstock-1280610196.webp' },
     { name: 'Lasagne', image: 'https://images.radio-canada.ca/v1/alimentation/recette/4x3/lasagne-25129.jpg' },
+    { name: 'Pain', image: 'https://www.lanutrition.fr/sites/default/files/styles/article_large/public/ressources/pain_0.jpg?itok=Iw06GBaT' },
     { name: 'Tout les produits', image: 'https://media.sudouest.fr/7083913/1000x500/gdfgdfg.jpg?v=1637768353' },
   ];
 
