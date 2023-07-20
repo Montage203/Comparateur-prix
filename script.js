@@ -1,6 +1,6 @@
 // Données des produits
 const products = [
-    {
+  {
     category: 'Entretien',
     name: 'Lessive Carrefour 18 Tabs',
     image: 'https://www.zupimages.net/up/23/28/miwj.jpg',
@@ -157,3 +157,5 @@ function init() {
 
 // Appel de la fonction d'initialisation
 init();
+
+

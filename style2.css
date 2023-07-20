@@ -1,0 +1,15 @@
+/* Style pour l'effet visuel de soulèvement lors du survol sur les produits */
+.product {
+    /* ... Autres styles ... */
+    transition: transform 0.3s, box-shadow 0.3s; /* Ajout de transitions pour l'effet de survol */
+  }
+  
+  /* Effet de soulèvement lors du survol */
+  .product:hover {
+    transform: translateY(-10px); /* Légèrement soulevé vers le haut lors du survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre portée pour l'effet de soulèvement */
+    cursor: pointer;
+  }
+  
+
+  

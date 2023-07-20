@@ -108,3 +108,78 @@ footer {
 .cacher a {text-decoration: solid;
   color: white;}
   
+  nav {align-items: center;}
+
+  /* Style pour le panier */
+#cart {
+  background-color: #36393f;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#cart h2 {
+  margin-bottom: 10px;
+}
+
+
+
+/* Style pour l'effet visuel quand la souris passe sur une catégorie */
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.category img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid transparent; /* Ajout d'une bordure transparente autour de l'image */
+  border-radius: 5px;
+  transition: border-color 0.3s; /* Ajout d'une transition pour l'effet visuel */
+}
+
+.category span {
+  color: #949BA4;
+}
+
+.category:hover img {
+  border-color: white; /* La bordure devient blanche lors du survol */
+}
+
+.category:hover span {
+  color: white;
+}
+
+
+/* Style pour le bouton "Cacher" et "Voir" */
+.cacher a {
+  text-decoration: solid;
+  color: #949BA4;
+}
+
+.cacher a:hover {
+  color: white;
+}
+
+
+
+
+/* Style pour l'effet visuel de soulèvement lors du survol sur les produits */
+.product {
+  /* ... Autres styles ... */
+  transition: transform 0.3s, box-shadow 0.3s; /* Ajout de transitions pour l'effet de survol */
+}
+
+/* Effet de soulèvement lors du survol */
+.product:hover {
+  transform: translateY(-10px); /* Légèrement soulevé vers le haut lors du survol */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre portée pour l'effet de soulèvement */
+  cursor: pointer;
+}
+
+
