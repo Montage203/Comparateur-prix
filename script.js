@@ -56,6 +56,10 @@ function displayCategories(categories) {
 
 // Fonction pour afficher les produits
 function displayProducts(products) {
+
+// Triez les produits par ordre de prix croissant
+  products.sort((a, b) => a.price - b.price);
+
   const productContainer = document.getElementById('product-list');
   productContainer.innerHTML = '';
 
