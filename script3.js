@@ -45,8 +45,8 @@ function showProductsToVerify() {
       <img src="${product.image}" alt="${product.name}">
       <div class="product-info">
         <span class="product-name">${product.name}</span>
-        <span class="product-price">Prix: ${product.price} €</span>
-        <span class="product-last-modified">Dernière modification: ${product.lastModified.toLocaleDateString('fr-FR')}</span>
+        <span class="product-price">Prix: ${product.price} €</span>
+        <span class="product-last-modified">Dernière modification: ${product.lastModified.toLocaleDateString('fr-FR')}</span>
       </div>
     `;
 
