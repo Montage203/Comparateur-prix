@@ -19,7 +19,7 @@ const products = [
   {
     category: 'Entretien',
     name: 'Lessive Carrefour 18 Tabs',
-    image: 'https://www.zupimages.net/up/23/28/miwj.jpg',
+    image: 'https://media.carrefour.fr/medias/26be6b55f61c36b8ae5b35fd07cc41ec/p_1500x1500/3560071242404-0.jpg',
     price: 5.59,
     supermarket: 'Deliveroo Carrefour-express',
     lastModified: new Date('2023-07-16'),
