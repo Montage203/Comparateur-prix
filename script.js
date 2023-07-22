@@ -1,5 +1,21 @@
 // Données des produits
 const products = [
+{
+    category: 'Choco',
+    name: 'Nussa 750g tartine',
+    image: 'https://imgproxy-retcat.assets.schwarz/P3XJC4cUGaP4GHd9L6PidzzcVTxVcyRo-_rBwce9zVs/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYmUvMS80RUYzMDRDNTAxQzJBNzI0NzVEMUY0OUM/zQzY2MTk1OEQwMTU3ODBBMDU4MDZFRUZBOTNEMjkyNTFFOTJENkRELmpwZw.jpg',
+    price: 2.19,
+    supermarket: 'Lidl',
+    lastModified: new Date('2023-07-22'),
+  },
+ {
+    category: 'Choco',
+    name: 'Delinut 750g tartine',
+    image: 'https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/2907/1/0/_jcr_content/assets/imported-images/BILD_INTERNET11/2907_hazelnootpasta_1.png/_jcr_content/renditions/opt.1250w.png.res/1680046698759/opt.1250w.png',
+    price: 2.55,
+    supermarket: 'Aldi',
+    lastModified: new Date('2023-07-22'),
+  },
   {
     category: 'Entretien',
     name: 'Lessive Carrefour 18 Tabs',
@@ -125,6 +141,7 @@ function init() {
     */
     { name: 'Eau', image: 'https://img.passeportsante.net/1200x675/2022-10-07/shutterstock-1280610196.webp' },
     { name: 'Pain', image: 'https://www.lanutrition.fr/sites/default/files/styles/article_large/public/ressources/pain_0.jpg?itok=Iw06GBaT' },
+{ name: 'Choco', image: 'https://observatoire-des-aliments.fr/wp-content/uploads/2022/04/chocolat.jpg' }, 
     { name: 'Entretien', image: 'https://www.destockplus.com/upload/300112_124446_PEEL_hvuejMpV.jpg' },  
     { name: 'Tout les produits', image: 'https://media.sudouest.fr/7083913/1000x500/gdfgdfg.jpg?v=1637768353' },
   ];
