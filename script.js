@@ -24,6 +24,22 @@ const products = [
     supermarket: 'Deliveroo Carrefour-express',
     lastModified: new Date('2023-07-16'),
   },
+{
+    category: 'Eau',
+    name: 'Rocheval 2L',
+    image: 'https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/320/1/0/jcr:content/assets/imported-images/BILD_INTERNET3/0320_bronwater.png/jcr:content/renditions/opt.736w.png.res/1681861626919/opt.736w.png',
+    price: 0.41,
+    supermarket: 'Aldi',
+    lastModified: new Date('2023-07-22'),
+  },
+{
+    category: 'Eau',
+    name: 'Rocheval 1.5L',
+    image: 'https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/6877/1/0/jcr:content/assets/imported-images/BILD_INTERNET12/6877_mineraalwater-2.png/jcr:content/renditions/opt.736w.png.res/1681861023691/opt.736w.png',
+    price: 0.40,
+    supermarket: 'Aldi',
+    lastModified: new Date('2023-07-22'),
+  },
     {
     category: 'Eau',
     name: 'Pierval Carrefour 1.5L',
