@@ -25,6 +25,22 @@ const products = [
     lastModified: new Date('2023-07-16'),
   },
 {
+    category: 'Entretien',
+    name: 'Una tablette lave-vaisselle × 70 ',
+    image: 'https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/8360/1/0/_jcr_content/assets/imported-images/BILD_INTERNET66/8360_vaatwastabletten_2.png/_jcr_content/renditions/opt.1250w.png.res/1688168213861/opt.1250w.png',
+    price: 4.99,
+    supermarket: 'Aldi',
+    lastModified: new Date('2023-07-22'),
+  },
+{
+    category: 'Entretien',
+    name: 'Tandil Color trio× 16 ',
+    image: 'https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/3004563/1/0/_jcr_content/assets/imported-images/BILD_INTERNET6/3004563_tandil_triocaps-3.png/_jcr_content/renditions/opt.1250w.png.res/1677214082501/opt.1250w.png',
+    price: 3.65,
+    supermarket: 'Aldi',
+    lastModified: new Date('2023-07-22'),
+  },
+{
     category: 'Eau',
     name: 'Rocheval 2L',
     image: 'https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/320/1/0/jcr:content/assets/imported-images/BILD_INTERNET3/0320_bronwater.png/jcr:content/renditions/opt.736w.png.res/1681861626919/opt.736w.png',
