@@ -157,7 +157,7 @@ function init() {
     */
     { name: 'Eau', image: 'https://img.passeportsante.net/1200x675/2022-10-07/shutterstock-1280610196.webp' },
     { name: 'Pain', image: 'https://www.lanutrition.fr/sites/default/files/styles/article_large/public/ressources/pain_0.jpg?itok=Iw06GBaT' },
-{ name: 'Choco', image: 'https://observatoire-des-aliments.fr/wp-content/uploads/2022/04/chocolat.jpg' }, 
+{ name: 'Choco', image: 'https://img.passeportsante.net/1200x675/2019-07-03/i89783-.webp' }, 
     { name: 'Entretien', image: 'https://www.destockplus.com/upload/300112_124446_PEEL_hvuejMpV.jpg' },  
     { name: 'Tout les produits', image: 'https://media.sudouest.fr/7083913/1000x500/gdfgdfg.jpg?v=1637768353' },
   ];
