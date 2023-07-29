@@ -112,7 +112,7 @@ const products = [
     name: "Una tablette Lave vaisselle tabs ×70 4€99",
     image:
       "https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/8360/1/0/_jcr_content/assets/imported-images/BILD_INTERNET66/8360_vaatwastabletten_2.png/_jcr_content/renditions/opt.1250w.png.res/1688168213861/opt.1250w.png",
-    price: 0.0712857143,
+    price: 0.07,
     quantity: 40,
     stockThreshold: 10, // Seuil de rupture de stock pour ce produit
     supermarket: "Aldi",
@@ -123,7 +123,7 @@ const products = [
     name: "Tandil Color trio Lessive tabs ×16 3€65",
     image:
       "https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/3004563/1/0/_jcr_content/assets/imported-images/BILD_INTERNET6/3004563_tandil_triocaps-3.png/_jcr_content/renditions/opt.1250w.png.res/1677214082501/opt.1250w.png",
-    price: 0.228125,
+    price: 0.23,
     quantity: 10,
     stockThreshold: 5, // Seuil de rupture de stock pour ce produit
     supermarket: "Aldi",
@@ -143,7 +143,7 @@ const products = [
     name: "Rocheval 1.5L",
     image:
       "https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/6877/1/0/jcr:content/assets/imported-images/BILD_INTERNET12/6877_mineraalwater-2.png/jcr:content/renditions/opt.736w.png.res/1681861023691/opt.736w.png",
-    price: 0.4,
+    price: 0.40,
     supermarket: "Aldi",
     lastModified: new Date("2023-07-22"),
   },
