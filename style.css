@@ -183,3 +183,8 @@ footer {
 }
 
 
+
+/* Styles pour les produits en rupture de stock */
+.product.out-of-stock {
+  border: 2px solid red;
+}
