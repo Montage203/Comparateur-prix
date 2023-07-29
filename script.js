@@ -33,7 +33,7 @@ const products = [
     lastModified: new Date('2023-07-29'),
   },
 {
-    category: 'Lessive',
+    category: 'Entretien',
     name: 'Apta tabs ×60 4€29',
     image: 'jpg',
     price: 0.0715,
@@ -41,7 +41,7 @@ const products = [
     lastModified: new Date('2023-07-29'),
   },
 {
-    category: 'Lessive',
+    category: 'Entretien',
     name: 'Lave vaisselle tabs ×50 4€19',
     image: 'jpg',
     price: 0.0838,
