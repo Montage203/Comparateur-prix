@@ -153,7 +153,7 @@ const products = [
     image: "https://cdn.carrefour.eu/1200_00167165_5400101161580_01.jpeg",
     price: 0.65,
     supermarket: "Deliveroo Carrefour-express",
-    lastModified: new Date("2023-07-16"),
+    lastModified: new Date("2023-08-01"),
   },
   {
     category: "Pain",
@@ -161,7 +161,7 @@ const products = [
     image: "https://cdn.carrefour.eu/1200_01962796_5400101490079_00.jpeg",
     price: 0.89,
     supermarket: "Carrefour-express",
-    lastModified: new Date("2023-07-16"),
+    lastModified: new Date("2023-08-01"),
   },
   {
     category: "Pain",
@@ -169,7 +169,7 @@ const products = [
     image: "https://cdn.carrefour.eu/1200_01962796_5400101490079_00.jpeg",
     price: 0.89,
     supermarket: "Deliveroo Carrefour-express",
-    lastModified: new Date("2023-07-16"),
+    lastModified: new Date("2023-08-01"),
   },
 ];
 
