@@ -100,15 +100,6 @@ const products = [
   },
   {
     category: "Entretien",
-    name: "Lessive Carrefour tabs ×18 5€59",
-    image:
-      "https://media.carrefour.fr/medias/26be6b55f61c36b8ae5b35fd07cc41ec/p_1500x1500/3560071242404-0.jpg",
-    price: 0.31,
-    supermarket: "Deliveroo Carrefour-express",
-    lastModified: new Date("2023-07-16"),
-  },
-  {
-    category: "Entretien",
     name: "Una tablette Lave vaisselle tabs ×70 4€99",
     image:
       "https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/8360/1/0/_jcr_content/assets/imported-images/BILD_INTERNET66/8360_vaatwastabletten_2.png/_jcr_content/renditions/opt.1250w.png.res/1688168213861/opt.1250w.png",
