@@ -6,7 +6,7 @@ const products = [
     image: 'https://imgproxy-retcat.assets.schwarz/FSkIHuKOk0EJaN0D3QKJAUGKzjBxe1_RI8d6J80ko-k/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvbmwvMS80NkRERkNBMjgxM0M0QjBGMkU2NEFBMjJ/EMUIyREY4Q0FCRDY0QkE0MDA5QTkxMjYzMzI3OUVFM0ExQjFCMEVDLmpwZw.jpg',
     price: 1.75,
     supermarket: 'Lidl',
-    lastModified: new Date('2023-07-01'),
+    lastModified: new Date('2023-08-01'),
   },
 {
     category: 'Sauce',
@@ -14,7 +14,7 @@ const products = [
     image: 'https://www.zupimages.net/up/23/31/276x.jpg',
     price: 1.49,
     supermarket: 'Lidl',
-    lastModified: new Date('2023-06-01'),
+    lastModified: new Date('2023-08-01'),
   },
 {
     category: "Eau",
@@ -22,7 +22,7 @@ const products = [
     image: "https://cdn.intermarche.com/fr/Content/images/boitmal/produit/zoom/673198192F0967FEB71B115437B3A398.jpg",
     price: 0.41,
     supermarket: "Intermarché",
-    lastModified: new Date("2023-06-29"),
+    lastModified: new Date("2023-07-29"),
   },
   {
     category: "Eau",
