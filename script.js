@@ -205,6 +205,7 @@ function displayCategories(categories) {
 }
 
 // Fonction pour afficher les produits
+// Fonction pour afficher les produits
 function displayProducts(products) {
   const productContainer = document.getElementById("product-list");
   productContainer.innerHTML = "";
@@ -212,7 +213,9 @@ function displayProducts(products) {
   function calcPriceDifference(oldPrice, currentPrice) {
     const priceDiff = currentPrice - oldPrice;
     const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
-    return priceDiffText;
+    const arrow = priceDiff > 0 ? "▲" : "▼";
+    const color = priceDiff > 0 ? "red" : "green";
+    return { priceDiffText, arrow, color };
   }
 
   products.forEach((product) => {
@@ -222,19 +225,23 @@ function displayProducts(products) {
       productElement.classList.add("out-of-stock");
     }
 
-    // Ajouter la condition pour afficher l'ancien prix
-    const oldPriceText = product.oldPrice ? `<p>Ancien prix: ${product.oldPrice} €</p>` : '';
+    // Ajouter la condition pour afficher l'ancien prix avec une flèche colorée
+    const oldPriceText = product.oldPrice
+      ? `<p style="color: ${calcPriceDifference(product.oldPrice, product.price).color}">Ancien prix: ${product.oldPrice} € ${
+          calcPriceDifference(product.oldPrice, product.price).arrow
+        }</p>`
+      : "";
 
     productElement.innerHTML = `
       <img src="${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
       <p>Prix: ${product.price} €</p>
       ${oldPriceText} <!-- Afficher l'ancien prix ici -->
-      ${product.oldPrice ? `<p>Différence de prix: ${calcPriceDifference(product.oldPrice, product.price)} €</p>` : ''}
+      <p>Différence de prix: <span style="color: ${calcPriceDifference(product.oldPrice, product.price).color}">${
+      calcPriceDifference(product.oldPrice, product.price).priceDiffText
+    } €</span></p>
       <p>Supermarché: ${product.supermarket}</p>
-      <p>Dernière modification: ${product.lastModified.toLocaleDateString(
-        "fr-FR"
-      )}</p>
+      <p>Dernière modification: ${product.lastModified.toLocaleDateString("fr-FR")}</p>
       <p>Quantité en stock: <span style="color: ${
         product.quantity < product.stockThreshold ? "red" : "inherit"
       }">${product.quantity}</span></p>
@@ -248,6 +255,7 @@ function displayProducts(products) {
     productContainer.appendChild(productElement);
   });
 }
+
 
 
 // Fonction pour afficher le nombre total de produits et le nombre de produits par supermarché
