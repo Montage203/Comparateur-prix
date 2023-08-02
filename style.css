@@ -188,3 +188,22 @@ footer {
 .product.out-of-stock {
   border: 2px solid red;
 }
+
+
+
+/* Style pour les flèches et les prix */
+.product .old-price {
+  color: green; /* Couleur pour l'ancien prix */
+}
+
+.product .new-price {
+  color: red; /* Couleur pour le nouveau prix */
+}
+
+.product .arrow-up {
+  color: red; /* Couleur pour la flèche vers le haut */
+}
+
+.product .arrow-down {
+  color: green; /* Couleur pour la flèche vers le bas */
+}
