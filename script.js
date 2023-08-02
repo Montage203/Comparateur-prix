@@ -205,51 +205,39 @@ function displayCategories(categories) {
 }
 
 // Fonction pour afficher les produits
-function displayProducts(products) {
-  const productContainer = document.getElementById("product-list");
-  productContainer.innerHTML = "";
-
-  function calcPriceDifference(oldPrice, currentPrice) {
-    const priceDiff = currentPrice - oldPrice;
-    const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
-    const arrow = priceDiff > 0 ? "▲" : "▼";
-    const color = priceDiff > 0 ? "red" : "green";
-    return { priceDiffText, arrow, color };
+function createProductElement(product) {
+  const productElement = document.createElement("div");
+  productElement.classList.add("product");
+  if (product.quantity <= product.stockThreshold) {
+    productElement.classList.add("out-of-stock");
   }
 
-  products.forEach((product) => {
-    const productElement = document.createElement("div");
-    productElement.classList.add("product");
-    if (product.quantity <= product.stockThreshold) {
-      productElement.classList.add("out-of-stock");
+  // Ajouter la condition pour afficher l'ancien prix avec la flèche appropriée
+  const oldPriceInfo = calcPriceDifference(product.oldPrice, product.price);
+  const oldPriceText = product.oldPrice
+    ? `<p style="color: ${oldPriceInfo.color}">Ancien prix: ${product.oldPrice} € ${oldPriceInfo.arrow}</p>`
+    : "";
+
+  productElement.innerHTML = `
+    <img src="${product.image}" alt="${product.name}">
+    <h3>${product.name}</h3>
+    <p>Prix: ${product.price} €</p>
+    ${oldPriceText}
+    <p>Supermarché: ${product.supermarket}</p>
+    <p>Dernière modification: ${product.lastModified.toLocaleDateString(
+      "fr-FR"
+    )}</p>
+    <p>Quantité en stock: <span style="color: ${
+      product.quantity < product.stockThreshold ? "red" : "inherit"
+    }">${product.quantity}</span></p>
+    ${
+      product.quantity < product.stockThreshold
+        ? "<p>Bientôt en rupture de stock</p>"
+        : ""
     }
+  `;
 
-    // Ajouter la condition pour afficher l'ancien prix avec une flèche colorée
-    const oldPriceInfo = calcPriceDifference(product.oldPrice, product.price);
-    const oldPriceText = product.oldPrice
-      ? `<p style="color: ${oldPriceInfo.color}">Ancien prix: ${product.oldPrice} € ${oldPriceInfo.arrow}</p>`
-      : "";
-
-    productElement.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p>Prix: ${product.price} €</p>
-      ${oldPriceText} <!-- Afficher l'ancien prix ici -->
-      <p>Différence de prix: <span style="color: ${oldPriceInfo.color}">${oldPriceInfo.priceDiffText} €</span></p>
-      <p>Supermarché: ${product.supermarket}</p>
-      <p>Dernière modification: ${product.lastModified.toLocaleDateString("fr-FR")}</p>
-      <p>Quantité en stock: <span style="color: ${
-        product.quantity < product.stockThreshold ? "red" : "inherit"
-      }">${product.quantity}</span></p>
-      ${
-        product.quantity < product.stockThreshold
-          ? "<p>Bientôt en rupture de stock</p>"
-          : ""
-      }
-    `;
-
-    productContainer.appendChild(productElement);
-  });
+  return productElement;
 }
 
 
