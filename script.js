@@ -4,7 +4,7 @@ const products = [
     category: 'Pizza',
     name: 'Pizza Tonno ×2 3€49',
     image: 'https://imgproxy-retcat.assets.schwarz/FSkIHuKOk0EJaN0D3QKJAUGKzjBxe1_RI8d6J80ko-k/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvbmwvMS80NkRERkNBMjgxM0M0QjBGMkU2NEFBMjJ/EMUIyREY4Q0FCRDY0QkE0MDA5QTkxMjYzMzI3OUVFM0ExQjFCMEVDLmpwZw.jpg',
-    price: 10.75,
+    price: 100.75,
 oldPrice: 1.10,
     supermarket: 'Lidl',
     lastModified: new Date('2023-08-01'),
@@ -209,13 +209,11 @@ function displayProducts(products) {
   const productContainer = document.getElementById("product-list");
   productContainer.innerHTML = "";
 
-
-function calcPriceDifference(oldPrice, currentPrice) {
-  const priceDiff = currentPrice - oldPrice;
-  const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
-  return priceDiffText;
-}
-
+  function calcPriceDifference(oldPrice, currentPrice) {
+    const priceDiff = currentPrice - oldPrice;
+    const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
+    return priceDiffText;
+  }
 
   products.forEach((product) => {
     const productElement = document.createElement("div");
@@ -224,31 +222,33 @@ function calcPriceDifference(oldPrice, currentPrice) {
       productElement.classList.add("out-of-stock");
     }
 
-// Ajouter la condition pour afficher l'ancien prix
+    // Ajouter la condition pour afficher l'ancien prix
     const oldPriceText = product.oldPrice ? `<p>Ancien prix: ${product.oldPrice} €</p>` : '';
 
     productElement.innerHTML = `
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-<p>Prix: ${product.price} €</p>
-  ${product.oldPrice ? `<p>Ancien prix: ${product.oldPrice} €</p>` : ''}
-  ${product.oldPrice ? `<p>Différence de prix: ${calcPriceDifference(product.oldPrice, product.price)} €</p>` : ''}        
-        <p>Supermarché: ${product.supermarket}</p>
-        <p>Dernière modification: ${product.lastModified.toLocaleDateString(
-          "fr-FR"
-        )}</p>
-        <p>Quantité en stock: <span style="color: ${
-          product.quantity < product.stockThreshold ? "red" : "inherit"
-        }">${product.quantity}</span></p>
-        ${
-          product.quantity < product.stockThreshold
-            ? "<p>Bientôt en rupture de stock</p>"
-            : ""
-        }
-      `;
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>Prix: ${product.price} €</p>
+      ${oldPriceText} <!-- Afficher l'ancien prix ici -->
+      ${product.oldPrice ? `<p>Différence de prix: ${calcPriceDifference(product.oldPrice, product.price)} €</p>` : ''}
+      <p>Supermarché: ${product.supermarket}</p>
+      <p>Dernière modification: ${product.lastModified.toLocaleDateString(
+        "fr-FR"
+      )}</p>
+      <p>Quantité en stock: <span style="color: ${
+        product.quantity < product.stockThreshold ? "red" : "inherit"
+      }">${product.quantity}</span></p>
+      ${
+        product.quantity < product.stockThreshold
+          ? "<p>Bientôt en rupture de stock</p>"
+          : ""
+      }
+    `;
+
     productContainer.appendChild(productElement);
   });
 }
+
 
 // Fonction pour afficher le nombre total de produits et le nombre de produits par supermarché
 function displayProductStats() {
