@@ -4,7 +4,7 @@ const products = [
     category: 'Pizza',
     name: 'Pizza Tonno ×2 3€49',
     image: 'https://imgproxy-retcat.assets.schwarz/FSkIHuKOk0EJaN0D3QKJAUGKzjBxe1_RI8d6J80ko-k/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvbmwvMS80NkRERkNBMjgxM0M0QjBGMkU2NEFBMjJ/EMUIyREY4Q0FCRDY0QkE0MDA5QTkxMjYzMzI3OUVFM0ExQjFCMEVDLmpwZw.jpg',
-    price: 1.75,
+    price: 10.75,
 oldPrice: 1.10,
     supermarket: 'Lidl',
     lastModified: new Date('2023-08-01'),
@@ -205,7 +205,6 @@ function displayCategories(categories) {
 }
 
 // Fonction pour afficher les produits
-// Fonction pour afficher les produits
 function displayProducts(products) {
   const productContainer = document.getElementById("product-list");
   productContainer.innerHTML = "";
@@ -226,10 +225,9 @@ function displayProducts(products) {
     }
 
     // Ajouter la condition pour afficher l'ancien prix avec une flèche colorée
+    const oldPriceInfo = calcPriceDifference(product.oldPrice, product.price);
     const oldPriceText = product.oldPrice
-      ? `<p style="color: ${calcPriceDifference(product.oldPrice, product.price).color}">Ancien prix: ${product.oldPrice} € ${
-          calcPriceDifference(product.oldPrice, product.price).arrow
-        }</p>`
+      ? `<p style="color: ${oldPriceInfo.color}">Ancien prix: ${product.oldPrice} € ${oldPriceInfo.arrow}</p>`
       : "";
 
     productElement.innerHTML = `
@@ -237,9 +235,7 @@ function displayProducts(products) {
       <h3>${product.name}</h3>
       <p>Prix: ${product.price} €</p>
       ${oldPriceText} <!-- Afficher l'ancien prix ici -->
-      <p>Différence de prix: <span style="color: ${calcPriceDifference(product.oldPrice, product.price).color}">${
-      calcPriceDifference(product.oldPrice, product.price).priceDiffText
-    } €</span></p>
+      <p>Différence de prix: <span style="color: ${oldPriceInfo.color}">${oldPriceInfo.priceDiffText} €</span></p>
       <p>Supermarché: ${product.supermarket}</p>
       <p>Dernière modification: ${product.lastModified.toLocaleDateString("fr-FR")}</p>
       <p>Quantité en stock: <span style="color: ${
@@ -255,6 +251,7 @@ function displayProducts(products) {
     productContainer.appendChild(productElement);
   });
 }
+
 
 
 
