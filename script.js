@@ -4,7 +4,7 @@ const products = [
     category: 'Pizza',
     name: 'Pizza Tonno ×2 3€49',
     image: 'https://imgproxy-retcat.assets.schwarz/FSkIHuKOk0EJaN0D3QKJAUGKzjBxe1_RI8d6J80ko-k/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvbmwvMS80NkRERkNBMjgxM0M0QjBGMkU2NEFBMjJ/EMUIyREY4Q0FCRDY0QkE0MDA5QTkxMjYzMzI3OUVFM0ExQjFCMEVDLmpwZw.jpg',
-    price: 10.75,
+    price: 1.75,
 oldPrice: 1.10,
     supermarket: 'Lidl',
     lastModified: new Date('2023-08-01'),
@@ -333,12 +333,15 @@ function displayOutOfStockProducts() {
 }
 
 
-// Fonction pour calculer la différence de prix entre l'ancien prix et le prix actuel
+// Fonction pour calculer la différence de prix entre l'ancien prix et le prix actuel 
 function calcPriceDifference(oldPrice, currentPrice) {
   const priceDiff = currentPrice - oldPrice;
   const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
-  return priceDiffText;
+  const arrow = priceDiff > 0 ? "▲" : "▼";
+  const color = priceDiff > 0 ? "red" : "green";
+  return { priceDiffText, arrow, color };
 }
+
 // Fonction pour trier les produits par supermarché et par catégorie
 function sortProductsBySupermarketAndCategory(products) {
   return products.sort((a, b) => {
