@@ -334,6 +334,7 @@ function createProductElement(product) {
       <img src="${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
       <p>Prix: ${product.price} €</p>
+      ${product.oldPrice ? `<p>Ancien prix: ${product.oldPrice} €</p>` : ''}
       <p>Supermarché: ${product.supermarket}</p>
       <p>Dernière modification: ${product.lastModified.toLocaleDateString(
         "fr-FR"
@@ -356,6 +357,15 @@ const showOutOfStockBtn = document.getElementById("showOutOfStockBtn");
 showOutOfStockBtn.addEventListener("click", displayOutOfStockProducts);
 
 ///////////////////////////////////////////////////////////
+
+// Fonction pour calculer la différence de prix entre l'ancien prix et le prix actuel
+function calcPriceDifference(oldPrice, currentPrice) {
+  const priceDiff = currentPrice - oldPrice;
+  const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
+  return priceDiffText;
+}
+
+
 
 // Fonction pour initialiser le site
 function init() {
