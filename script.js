@@ -313,6 +313,13 @@ function displayOutOfStockProducts() {
   });
 }
 
+
+// Fonction pour calculer la différence de prix entre l'ancien prix et le prix actuel
+function calcPriceDifference(oldPrice, currentPrice) {
+  const priceDiff = currentPrice - oldPrice;
+  const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
+  return priceDiffText;
+}
 // Fonction pour trier les produits par supermarché et par catégorie
 function sortProductsBySupermarketAndCategory(products) {
   return products.sort((a, b) => {
@@ -359,12 +366,7 @@ showOutOfStockBtn.addEventListener("click", displayOutOfStockProducts);
 
 ///////////////////////////////////////////////////////////
 
-// Fonction pour calculer la différence de prix entre l'ancien prix et le prix actuel
-function calcPriceDifference(oldPrice, currentPrice) {
-  const priceDiff = currentPrice - oldPrice;
-  const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
-  return priceDiffText;
-}
+
 
 
 
