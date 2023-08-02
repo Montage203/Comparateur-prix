@@ -209,6 +209,14 @@ function displayProducts(products) {
   const productContainer = document.getElementById("product-list");
   productContainer.innerHTML = "";
 
+
+function calcPriceDifference(oldPrice, currentPrice) {
+  const priceDiff = currentPrice - oldPrice;
+  const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
+  return priceDiffText;
+}
+
+
   products.forEach((product) => {
     const productElement = document.createElement("div");
     productElement.classList.add("product");
@@ -222,8 +230,9 @@ function displayProducts(products) {
     productElement.innerHTML = `
         <img src="${product.image}" alt="${product.name}">
         <h3>${product.name}</h3>
-        <p>Prix: ${product.price} €</p>
-      ${product.oldPrice ? `<p>Ancien prix: ${product.oldPrice} €</p>` : ''}
+<p>Prix: ${product.price} €</p>
+  ${product.oldPrice ? `<p>Ancien prix: ${product.oldPrice} €</p>` : ''}
+  ${product.oldPrice ? `<p>Différence de prix: ${calcPriceDifference(product.oldPrice, product.price)} €</p>` : ''}        
         <p>Supermarché: ${product.supermarket}</p>
         <p>Dernière modification: ${product.lastModified.toLocaleDateString(
           "fr-FR"
