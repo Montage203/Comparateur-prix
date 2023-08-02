@@ -1,14 +1,14 @@
-// Données des produits
-const products = [
-{
-    category: 'Pizza',
-    name: 'Pizza Tonno ×2 3€49',
-    image: 'https://imgproxy-retcat.assets.schwarz/FSkIHuKOk0EJaN0D3QKJAUGKzjBxe1_RI8d6J80ko-k/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvbmwvMS80NkRERkNBMjgxM0M0QjBGMkU2NEFBMjJ/EMUIyREY4Q0FCRDY0QkE0MDA5QTkxMjYzMzI3OUVFM0ExQjFCMEVDLmpwZw.jpg',
-    price: 10.75,
-oldPrice: 1.10,
-    supermarket: 'Lidl',
-    lastModified: new Date('2023-08-01'),
-  },
+// Données des produits 
+const products = [ 
+  { 
+    category: 'Pizza', 
+    name: 'Pizza Tonno ×2 3€49', 
+    image: 'https://imgproxy-retcat.assets.schwarz/FSkIHuKOk0EJaN0D3QKJAUGKzjBxe1_RI8d6J80ko-k/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvbmwvMS80NkRERkNBMjgxM0M0QjBGMkU2NEFBMjJ/EMUIyREY4Q0FCRDY0QkE0MDA5QTkxMjYzMzI3OUVFM0ExQjFCMEVDLmpwZw.jpg', 
+    price: 1.75, 
+    oldPrice: 1.10, 
+    supermarket: 'Lidl', 
+    lastModified: new Date('2023-08-01'), 
+  }, 
 {
     category: 'Sauce',
     name: 'Sauce tomate Baresa 700g',
@@ -181,72 +181,82 @@ oldPrice: 1.10,
   },
 ];
 
-// Fonction pour afficher les catégories
-function displayCategories(categories) {
-  const categoryContainer = document.getElementById("product-categories");
-  categoryContainer.innerHTML = "";
 
-  categories.forEach((category) => {
-    const categoryElement = document.createElement("div");
-    categoryElement.classList.add("category");
-    categoryElement.innerHTML = `
-        <img src="${category.image}" alt="${category.name}">
-        <span>${category.name}</span>
-      `;
-    categoryElement.addEventListener("click", () => {
-      const filteredProducts =
-        category.name === "Tout les produits"
-          ? products
-          : products.filter((product) => product.category === category.name);
-      displayProducts(filteredProducts);
-    });
-    categoryContainer.appendChild(categoryElement);
-  });
+// Fonction pour afficher les catégories 
+function displayCategories(categories) { 
+  const categoryContainer = document.getElementById("product-categories"); 
+  categoryContainer.innerHTML = ""; 
+
+  categories.forEach((category) => { 
+    const categoryElement = document.createElement("div"); 
+    categoryElement.classList.add("category"); 
+    categoryElement.innerHTML = ` 
+      <img src="${category.image}" alt="${category.name}"> 
+      <span>${category.name}</span> 
+    `; 
+    categoryElement.addEventListener("click", () => { 
+      const filteredProducts = 
+        category.name === "Tout les produits" 
+        ? products 
+        : products.filter((product) => product.category === category.name); 
+      displayProducts(filteredProducts); 
+    }); 
+    categoryContainer.appendChild(categoryElement); 
+  }); 
 }
 
-// Fonction pour afficher les produits
-function createProductElement(product) {
-  const productElement = document.createElement("div");
-  productElement.classList.add("product");
-  if (product.quantity <= product.stockThreshold) {
-    productElement.classList.add("out-of-stock");
-  }
+// Fonction pour afficher les produits 
+function displayProducts(products) { 
+  const productContainer = document.getElementById("product-list"); 
+  productContainer.innerHTML = "";
 
-  // Ajouter la condition pour afficher l'ancien prix avec la flèche appropriée
-  const oldPriceInfo = calcPriceDifference(product.oldPrice, product.price);
-  const oldPriceText = product.oldPrice
-    ? `<p style="color: ${oldPriceInfo.color}">Ancien prix: ${product.oldPrice} € ${oldPriceInfo.arrow}</p>`
-    : "";
+  function calcPriceDifference(oldPrice, currentPrice) { 
+    const priceDiff = currentPrice - oldPrice; 
+    const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2); 
+    const arrow = priceDiff > 0 ? "▲" : "▼"; 
+    const color = priceDiff > 0 ? "red" : "green"; 
+    return { priceDiffText, arrow, color }; 
+  } 
 
-  productElement.innerHTML = `
-    <img src="${product.image}" alt="${product.name}">
-    <h3>${product.name}</h3>
-    <p>Prix: ${product.price} €</p>
-    ${oldPriceText}
-    <p>Supermarché: ${product.supermarket}</p>
-    <p>Dernière modification: ${product.lastModified.toLocaleDateString(
-      "fr-FR"
-    )}</p>
-    <p>Quantité en stock: <span style="color: ${
-      product.quantity < product.stockThreshold ? "red" : "inherit"
-    }">${product.quantity}</span></p>
-    ${
-      product.quantity < product.stockThreshold
-        ? "<p>Bientôt en rupture de stock</p>"
-        : ""
-    }
-  `;
+  products.forEach((product) => { 
+    const productElement = document.createElement("div"); 
+    productElement.classList.add("product"); 
+    if (product.quantity <= product.stockThreshold) { 
+      productElement.classList.add("out-of-stock"); 
+    } 
 
-  return productElement;
+    // Ajouter la condition pour afficher l'ancien prix avec une flèche colorée 
+    const oldPriceInfo = calcPriceDifference(product.oldPrice, product.price); 
+    const oldPriceText = product.oldPrice 
+      ? `<p style="color: ${oldPriceInfo.color}">Ancien prix: ${product.oldPrice} € ${oldPriceInfo.arrow}</p>` 
+      : ""; 
+
+    productElement.innerHTML = ` 
+      <img src="${product.image}" alt="${product.name}"> 
+      <h3>${product.name}</h3> 
+      <p>Prix: ${product.price} €</p> 
+      ${oldPriceText} <!-- Afficher l'ancien prix ici --> 
+      <p>Différence de prix: <span style="color: ${oldPriceInfo.color}">${oldPriceInfo.priceDiffText} €</span></p> 
+      <p>Supermarché: ${product.supermarket}</p> 
+      <p>Dernière modification: ${product.lastModified.toLocaleDateString("fr-FR")}</p> 
+      <p>Quantité en stock: <span style="color: ${ 
+        product.quantity < product.stockThreshold ? "red" : "inherit" 
+      }">${product.quantity}</span></p> 
+      ${ 
+        product.quantity < product.stockThreshold 
+        ? "<p>Bientôt en rupture de stock</p>" 
+        : "" 
+      } 
+    `; 
+
+    productContainer.appendChild(productElement); 
+  }); 
 }
 
-
-
-
-// Fonction pour afficher le nombre total de produits et le nombre de produits par supermarché
-function displayProductStats() {
-  const totalProductsElement = document.getElementById("total-products");
-  totalProductsElement.textContent = `Nombre total de produits : ${products.length}`;
+// Fonction pour afficher le nombre total de produits et le nombre de produits par supermarché 
+function displayProductStats() { 
+  const totalProductsElement = document.getElementById("total-products"); 
+  totalProductsElement.textContent = `Nombre total de produits : products.length}`;
 
   const productsBySupermarket = {};
   products.forEach((product) => {
@@ -268,203 +278,133 @@ function displayProductStats() {
   });
 }
 
-// Fonction pour trier les produits par ordre de prix
-function sortProductsByPrice(products, sortOrder) {
-  return products.sort((a, b) =>
-    sortOrder === "asc" ? a.price - b.price : b.price - a.price
-  );
+// Fonction pour trier les produits par ordre de prix 
+function sortProductsByPrice(products, sortOrder) { 
+  return products.sort((a, b) => 
+    sortOrder === "asc" ? a.price - b.price : b.price - a.price 
+  ); 
 }
 
-// Fonction pour trier les produits par ordre alphabétique
-function sortProductsByName(products, sortOrder) {
-  return products.sort((a, b) =>
-    sortOrder === "asc"
-      ? a.name.localeCompare(b.name)
-      : b.name.localeCompare(a.name)
-  );
+// Fonction pour trier les produits par ordre alphabétique 
+function sortProductsByName(products, sortOrder) { 
+  return products.sort((a, b) => 
+    sortOrder === "asc" 
+    ? a.name.localeCompare(b.name) 
+    : b.name.localeCompare(a.name) 
+  ); 
 }
 
-// Fonction pour trier les produits par date de dernière modification
-function sortProductsByLastModified(products, sortOrder) {
-  return products.sort((a, b) =>
-    sortOrder === "asc"
-      ? a.lastModified - b.lastModified
-      : b.lastModified - a.lastModified
-  );
+// Fonction pour trier les produits par date de dernière modification 
+function sortProductsByLastModified(products, sortOrder) { 
+  return products.sort((a, b) => 
+    sortOrder === "asc" 
+    ? a.lastModified - b.lastModified 
+    : b.lastModified - a.lastModified 
+  ); 
 }
 
-///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
 
-// Fonction pour afficher les produits bientôt en rupture de stock
-function displayOutOfStockProducts() {
-  const outOfStockProducts = products.filter(
-    (product) => product.quantity === 0
-  );
-  const inStockProducts = products.filter((product) => product.quantity > 0);
+// Fonction pour afficher les produits bientôt en rupture de stock 
+function displayOutOfStockProducts() { 
+  const outOfStockProducts = products.filter( 
+    (product) => product.quantity === 0 
+  ); 
+  const inStockProducts = products.filter((product) => product.quantity > 0); 
 
-  // Triez les produits en stock en fonction du supermarché et de la catégorie
-  const sortedInStockProducts =
-    sortProductsBySupermarketAndCategory(inStockProducts);
+  // Triez les produits en stock en fonction du supermarché et de la catégorie 
+  const sortedInStockProducts = 
+    sortProductsBySupermarketAndCategory(inStockProducts); 
 
-  const productListContainer = document.getElementById("product-list");
-  productListContainer.innerHTML = "";
+  const productListContainer = document.getElementById("product-list"); 
+  productListContainer.innerHTML = ""; 
 
-  sortedInStockProducts.forEach((product) => {
-    const productElement = createProductElement(product);
-    productListContainer.appendChild(productElement);
-  });
+  sortedInStockProducts.forEach((product) => { 
+    const productElement = createProductElement(product); 
+    productListContainer.appendChild(productElement); 
+  }); 
 
-  outOfStockProducts.forEach((product) => {
-    const productElement = createProductElement(product);
-    productListContainer.appendChild(productElement);
-  });
+  outOfStockProducts.forEach((product) => { 
+    const productElement = createProductElement(product); 
+    productListContainer.appendChild(productElement); 
+  }); 
 }
 
-
-// Fonction pour calculer la différence de prix entre l'ancien prix et le prix actuel 
-function calcPriceDifference(oldPrice, currentPrice) {
-  const priceDiff = currentPrice - oldPrice;
-  const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2);
-  const arrow = priceDiff > 0 ? "▲" : "▼";
-  const color = priceDiff > 0 ? "red" : "green";
-  return { priceDiffText, arrow, color };
+// Fonction pour calculer la différence de prix entre l'ancien prix et le prix actuel  
+function calcPriceDifference(oldPrice, currentPrice) { 
+  const priceDiff = currentPrice - oldPrice; 
+  const priceDiffText = priceDiff > 0 ? `+${priceDiff.toFixed(2)}` : priceDiff.toFixed(2); 
+  const arrow = priceDiff > 0 ? "▲" : "▼"; 
+  const color = priceDiff > 0 ? "red" : "green"; 
+  return { priceDiffText, arrow, color }; 
 }
 
-// Fonction pour trier les produits par supermarché et par catégorie
-function sortProductsBySupermarketAndCategory(products) {
-  return products.sort((a, b) => {
-    if (a.supermarket === b.supermarket) {
-      return a.category.localeCompare(b.category);
-    } else {
-      return a.supermarket.localeCompare(b.supermarket);
-    }
-  });
+// Fonction pour trier les produits par supermarché et par catégorie 
+function sortProductsBySupermarketAndCategory(products) { 
+  return products.sort((a, b) => { 
+    if (a.supermarket === b.supermarket) { 
+      return a.category.localeCompare(b.category); 
+    } else { 
+      return a.supermarket.localeCompare(b.supermarket); 
+    } 
+  }); 
 }
 
-// Fonction pour créer l'élément HTML représentant un produit
-function createProductElement(product) {
-  const productElement = document.createElement("div");
-  productElement.classList.add("product");
-  if (product.quantity <= product.stockThreshold) {
-    productElement.classList.add("out-of-stock");
-  }
-  productElement.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p>Prix: ${product.price} €</p>
-      ${product.oldPrice ? `<p>Ancien prix: ${product.oldPrice} €</p>` : ''}
-      <p>Supermarché: ${product.supermarket}</p>
-      <p>Dernière modification: ${product.lastModified.toLocaleDateString(
-        "fr-FR"
-      )}</p>
-      <p>Quantité en stock: <span style="color: ${
-        product.quantity < product.stockThreshold ? "red" : "inherit"
-      }">${product.quantity}</span></p>
-      ${
-        product.quantity < product.stockThreshold
-          ? "<p>Bientôt en rupture de stock</p>"
-          : ""
-      }
-    `;
+// Fonction pour créer l'élément HTML représentant un produit 
+function createProductElement(product) { 
+  const productElement = document.createElement("div"); 
+  productElement.classList.add("product"); 
+  if (product.quantity <= product.stockThreshold) { 
+    productElement.classList.add("out-of-stock"); 
+  } 
+  productElement.innerHTML = ` 
+    <img src="${product.image}" alt="${product.name}"> 
+    <h3>${product.name}</h3> 
+    <p>Prix: ${product.price} €</p> 
+    ${product.oldPrice ? `<p>Ancien prix: ${product.oldPrice} €</p>` : ''} 
+    <p>Supermarché: ${product.supermarket}</p> 
+    <p>Dernière modification: ${product.lastModified.toLocaleDateString( 
+      "fr-FR" 
+    )}</p> 
+    <p>Quantité en stock: <span style="color: ${ 
+      product.quantity < product.stockThreshold ? "red" : "inherit" 
+    }">${product.quantity}</span></p> 
+    ${ 
+      product.quantity < product.stockThreshold 
+      ? "<p>Bientôt en rupture de stock</p>" 
+      : "" 
+    } 
+  `; 
 
-
-  return productElement;
+  return productElement; 
 }
 
-const showOutOfStockBtn = document.getElementById("showOutOfStockBtn");
+const showOutOfStockBtn = document.getElementById("showOutOfStockBtn"); 
 showOutOfStockBtn.addEventListener("click", displayOutOfStockProducts);
 
-///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
 
+// Fonction pour initialiser le site 
+function init() { 
+  const categories = [ 
+    /*     { name: 'Fruits', image: 'https://hips.hearstapps.com/hmg-prod/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg' }, 
+    { name: 'Légumes', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Legumes_cruds.jpg/800px-Legumes_cruds.jpg' }, 
+    { name: 'Viandes', image: 'https://img.etimg.com/thumb/width-1200,height-900,imgsize-196016,resizemode-1,msid-81605033/industry/cons-products/food/the-changing-fortunes-of-indias-poultry-industry/egg-getty-images.jpg' }, 
+    { name: 'Poissons', image: 'https://www.repaschezsoi.com/477-large_default/filets-de-bar.jpg' }, 
+    { name: 'Boulangerie', image: 'https://img-3.journaldesfemmes.fr/1UnzO5o4wyFlhX0B5vF0Dle5-T0=/910x607/smart/12b61914feab4f1eb53e37eac22f1d26/ccmcms-jdf/10696333.jpg' }, 
+    { name: 'Pâtisserie', image: 'https://img-3.journaldesfemmes.fr/6V4ZsJ7VJhmckCz4AmY3ee-RV_c=/910x607/smart/68ab15b3f78c44f495365ae7f8ccba02/ccmcms-jdf/10696454.jpg' }, 
+    { name: 'Boissons', image: 'https://static.lpnt.fr/images/2019/05/24/18616878lpw-18616875-article-jpg_6171586_1250x625.jpg' }, 
+    { name: 'Surgelés', image: 'https://img-3.journaldesfemmes.fr/hL64R2zfsdEKg2YmOs7Fn0qt7bQ=/910x607/smart/4d33862e5c5d4a3b87667161ef5c3441/ccmcms-jdf/10696273.jpg' }, 
+    { name: 'Entretien', image: 'https://www.dhresource.com/0x0s/f2-albu-g6-M01-35-19-rBVaSFraGnqAboAEAAGhK-kGKUs443.jpg/liquide-de-nettoyage-pour-sol-et-parquet.jpg' }, 
+    { name: 'Hygiène', image: 'https://img-3.journaldesfemmes.fr/4Op5itKKo9lPSF5R7ETvVKqAzQw=/910x607/smart/616f13a0607949d2a6d521ad814b6b7f/ccmcms-jdf/10696154.jpg' }, 
+    { name: 'Animaux', image: 'https://i0.wp.com/aimable-animaux.com/wp-content/uploads/2019/06/cropped-e1559667829560.png' }, 
+    { name: 'Autres', image: 'https://img-3.journaldesfemmes.fr/sqce_5rGhkoMmW-TxU2KcL3jCqE=/910x607/smart/0e6579b722454f7c9503364d19eb66a4/ccmcms-jdf/10695829.jpg' }, 
+    { name: 'Tout les produits', image: 'https://cdn.pixabay.com/photo/2017/01/11/11/33/shopping-cart-1979684_960_720.png' }, 
+  ]; 
 
-
-
-
-// Fonction pour initialiser le site
-function init() {
-  const categories = [
-    /* { name: 'Fruits', image: 'https://hips.hearstapps.com/hmg-prod/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg' },
-      { name: 'Légumes', image: 'https://upload.wikimedia.org/wikipedia/commons/8/86/L%C3%A9gumes_pour_ratatouille_au_march%C3%A9_d%27Apt.jpg' },
-      { name: 'Viande', image: 'https://i.notretemps.com/1400x787/smart/2023/01/17/illustration-de-viande.jpeg' },
-      { name: 'Papier toilette', image: 'https://cdn.webshopapp.com/shops/291748/files/331481689/1000x1000x2/jantex-toiletpapier-premium-40-stuk-3-laags-170-ve.jpg' },
-      { name: 'Lasagne', image: 'https://images.radio-canada.ca/v1/alimentation/recette/4x3/lasagne-25129.jpg' },
-      */
-    {
-      name: "Eau",
-      image:
-        "https://img.passeportsante.net/1200x675/2022-10-07/shutterstock-1280610196.webp",
-    },
-    {
-      name: "Pain",
-      image:
-        "https://www.lanutrition.fr/sites/default/files/styles/article_large/public/ressources/pain_0.jpg?itok=Iw06GBaT",
-    },
-    {
-      name: "Choco",
-      image: "https://img.passeportsante.net/1200x675/2019-07-03/i89783-.webp",
-    },
-{
-      name: "Pizza",
-      image:
-        "https://www.recipetineats.com/wp-content/uploads/2020/05/Pepperoni-Pizza_5-SQjpg.jpg",
-    },
-{
-      name: "Sauce",
-      image:
-        "https://img.cuisineaz.com/660x660/2013/12/20/i7853-sauce-arrabiata.jpg",
-    },
-    {
-      name: "Entretien",
-      image:
-        "https://www.destockplus.com/upload/300112_124446_PEEL_hvuejMpV.jpg",
-    },
-    {
-      name: "Tout les produits",
-      image:
-        "https://media.sudouest.fr/7083913/1000x500/gdfgdfg.jpg?v=1637768353",
-    },
-  ];
-
-  displayCategories(categories);
+  displayCategories(categories); 
+  displayProducts(products); 
   displayProductStats();
-
-  const sortSelect = document.getElementById("sort-select");
-  sortSelect.addEventListener("change", () => {
-    const sortOption = sortSelect.value;
-    let sortedProducts = [];
-
-    if (sortOption === "priceAsc" || sortOption === "priceDesc") {
-      sortedProducts = sortProductsByPrice(
-        products,
-        sortOption === "priceAsc" ? "asc" : "desc"
-      );
-    } else if (sortOption === "nameAsc" || sortOption === "nameDesc") {
-      sortedProducts = sortProductsByName(
-        products,
-        sortOption === "nameAsc" ? "asc" : "desc"
-      );
-    } else if (
-      sortOption === "lastModifiedAsc" ||
-      sortOption === "lastModifiedDesc"
-    ) {
-      sortedProducts = sortProductsByLastModified(
-        products,
-        sortOption === "lastModifiedAsc" ? "asc" : "desc"
-      );
-    }
-
-    displayProducts(sortedProducts);
-  });
-
-  const searchInput = document.getElementById("search-input");
-  searchInput.addEventListener("input", () => {
-    const searchText = searchInput.value.toLowerCase();
-    const filteredProducts = products.filter((product) =>
-      product.name.toLowerCase().includes(searchText)
-    );
-    displayProducts(filteredProducts);
-  });
 }
 
-// Appel de la fonction d'initialisation
 init();
