@@ -207,3 +207,13 @@ footer {
 .product .arrow-down {
   color: green; /* Couleur pour la flèche vers le bas */
 }
+
+
+/* Styles pour les flèches de comparaison de prix */
+.product .arrow-up {
+  color: red; /* Couleur pour la flèche vers le haut */
+}
+
+.product .arrow-down {
+  color: green; /* Couleur pour la flèche vers le bas */
+}
