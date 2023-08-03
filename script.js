@@ -5,7 +5,6 @@
      name: 'Pizza Tonno ×2 3€49', 
      image: 'https://imgproxy-retcat.assets.schwarz/FSkIHuKOk0EJaN0D3QKJAUGKzjBxe1_RI8d6J80ko-k/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvbmwvMS80NkRERkNBMjgxM0M0QjBGMkU2NEFBMjJ/EMUIyREY4Q0FCRDY0QkE0MDA5QTkxMjYzMzI3OUVFM0ExQjFCMEVDLmpwZw.jpg', 
      price: 1.75, 
-oldPrice: 1.50, // Ajoutez l'ancien prix ici
      supermarket: 'Lidl', 
      lastModified: new Date('2023-08-01'), 
    }, 
@@ -180,11 +179,6 @@ oldPrice: 1.50, // Ajoutez l'ancien prix ici
      lastModified: new Date("2023-08-01"), 
    }, 
  ]; 
-
-  
-  productNameElement.textContent = product.name;
-  productPriceElement.textContent = `${product.price} €`;
-  productOldPriceElement.textContent = `Prix: ${product.oldPrice} €`;
   
  // Fonction pour afficher les catégories 
  function displayCategories(categories) { 
@@ -330,39 +324,33 @@ oldPrice: 1.50, // Ajoutez l'ancien prix ici
  } 
   
  // Fonction pour créer l'élément HTML représentant un produit 
- function createProductElement(product) {
-  const productElement = document.createElement("div");
-  productElement.classList.add("product");
-  if (product.quantity <= product.stockThreshold) {
-    productElement.classList.add("out-of-stock");
-  }
-
-  // Vérifier si l'ancien prix existe et s'il est différent du prix actuel
-  const hasOldPrice = typeof product.oldPrice === "number" && product.oldPrice !== product.price;
-
-  // Déterminer la couleur de la flèche en fonction de la différence de prix
-  const arrowColor = hasOldPrice ? (product.oldPrice < product.price ? "red" : "green") : "transparent";
-
-  // Générer l'HTML pour l'affichage du prix et de l'ancien prix avec les flèches
-  const priceHTML = hasOldPrice
-    ? `<p class="current-price" style="color: ${arrowColor}">${product.price} € ${arrowColor === "red" ? "↑" : "↓"}</p><p class="old-price">${product.oldPrice} €</p>`
-    : `<p class="current-price">${product.price} €</p>`;
-
-  productElement.innerHTML = `
-    <img src="${product.image}" alt="${product.name}">
-    <h3>${product.name}</h3>
-    ${priceHTML}
-    <p>Supermarché: ${product.supermarket}</p>
-    <p>Dernière modification: ${product.lastModified.toLocaleDateString("fr-FR")}</p>
-    <p>Quantité en stock: <span style="color: ${product.quantity < product.stockThreshold ? "red" : "inherit"}">${product.quantity}</span></p>
-    ${product.quantity < product.stockThreshold ? "<p>Bientôt en rupture de stock</p>" : ""}
-  `;
-
-  return productElement;
-}
-
-
-
+ function createProductElement(product) { 
+   const productElement = document.createElement("div"); 
+   productElement.classList.add("product"); 
+   if (product.quantity <= product.stockThreshold) { 
+     productElement.classList.add("out-of-stock"); 
+   } 
+   productElement.innerHTML = ` 
+       <img src="${product.image}" alt="${product.name}"> 
+       <h3>${product.name}</h3> 
+       <p>Prix: ${product.price} €</p> 
+       <p>Supermarché: ${product.supermarket}</p> 
+       <p>Dernière modification: ${product.lastModified.toLocaleDateString( 
+         "fr-FR" 
+       )}</p> 
+       <p>Quantité en stock: <span style="color: ${ 
+         product.quantity < product.stockThreshold ? "red" : "inherit" 
+       }">${product.quantity}</span></p> 
+       ${ 
+         product.quantity < product.stockThreshold 
+           ? "<p>Bientôt en rupture de stock</p>" 
+           : "" 
+       } 
+     `; 
+  
+  
+   return productElement; 
+ } 
   
  const showOutOfStockBtn = document.getElementById("showOutOfStockBtn"); 
  showOutOfStockBtn.addEventListener("click", displayOutOfStockProducts); 
