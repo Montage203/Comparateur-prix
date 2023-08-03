@@ -4,7 +4,7 @@
      category: 'Pizza', 
      name: 'Pizza Tonno ×2 3€49', 
      image: 'https://imgproxy-retcat.assets.schwarz/FSkIHuKOk0EJaN0D3QKJAUGKzjBxe1_RI8d6J80ko-k/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvbmwvMS80NkRERkNBMjgxM0M0QjBGMkU2NEFBMjJ/EMUIyREY4Q0FCRDY0QkE0MDA5QTkxMjYzMzI3OUVFM0ExQjFCMEVDLmpwZw.jpg', 
-     price: 1.75, 
+     price: 10.75, 
 oldPrice: 1.50, // Ajoutez l'ancien prix ici
      supermarket: 'Lidl', 
      lastModified: new Date('2023-08-01'), 
@@ -325,8 +325,7 @@ oldPrice: 1.50, // Ajoutez l'ancien prix ici
  } 
   
  // Fonction pour créer l'élément HTML représentant un produit 
- // Fonction pour créer l'élément HTML représentant un produit
-function createProductElement(product) {
+ function createProductElement(product) {
   const productElement = document.createElement("div");
   productElement.classList.add("product");
   if (product.quantity <= product.stockThreshold) {
@@ -341,9 +340,7 @@ function createProductElement(product) {
 
   // Générer l'HTML pour l'affichage du prix et de l'ancien prix avec les flèches
   const priceHTML = hasOldPrice
-    ? `<p class="current-price" style="color: ${arrowColor}">${product.price} € ${
-        arrowColor === "red" ? "↑" : "↓"
-      }</p><p class="old-price">${product.oldPrice} €</p>`
+    ? `<p class="current-price" style="color: ${arrowColor}">${product.price} € ${arrowColor === "red" ? "↑" : "↓"}</p><p class="old-price">${product.oldPrice} €</p>`
     : `<p class="current-price">${product.price} €</p>`;
 
   productElement.innerHTML = `
@@ -352,14 +349,13 @@ function createProductElement(product) {
     ${priceHTML}
     <p>Supermarché: ${product.supermarket}</p>
     <p>Dernière modification: ${product.lastModified.toLocaleDateString("fr-FR")}</p>
-    <p>Quantité en stock: <span style="color: ${product.quantity < product.stockThreshold ? "red" : "inherit"}">${
-    product.quantity
-  }</span></p>
+    <p>Quantité en stock: <span style="color: ${product.quantity < product.stockThreshold ? "red" : "inherit"}">${product.quantity}</span></p>
     ${product.quantity < product.stockThreshold ? "<p>Bientôt en rupture de stock</p>" : ""}
   `;
 
   return productElement;
 }
+
 
 
   
