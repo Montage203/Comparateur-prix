@@ -180,6 +180,14 @@ oldPrice: 1.50, // Ajoutez l'ancien prix ici
      lastModified: new Date("2023-08-01"), 
    }, 
  ]; 
+
+  const productNameElement = document.getElementById('product-name');
+  const productPriceElement = document.getElementById('product-price');
+  const productOldPriceElement = document.getElementById('product-old-price');
+
+  productNameElement.textContent = product.name;
+  productPriceElement.textContent = `${product.price} €`;
+  productOldPriceElement.textContent = `Prix: ${product.oldPrice} €`;
   
  // Fonction pour afficher les catégories 
  function displayCategories(categories) { 
