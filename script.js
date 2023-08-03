@@ -325,43 +325,42 @@ oldPrice: 1.50, // Ajoutez l'ancien prix ici
  } 
   
  // Fonction pour créer l'élément HTML représentant un produit 
- function createProductElement(product) {
+ // Fonction pour créer l'élément HTML représentant un produit
+function createProductElement(product) {
   const productElement = document.createElement("div");
   productElement.classList.add("product");
   if (product.quantity <= product.stockThreshold) {
     productElement.classList.add("out-of-stock");
   }
 
-  // Ajout de l'ancien prix
-  const oldPrice = product.price * 1.2; // Par exemple, multiplions le prix par 1.2 pour obtenir un ancien prix fictif
-  const priceComparisonArrow =
-    product.price > oldPrice
-      ? '<span class="arrow-up">&#9650;</span>'
-      : product.price < oldPrice
-      ? '<span class="arrow-down">&#9660;</span>'
-      : '';
+  // Vérifier si l'ancien prix existe et s'il est différent du prix actuel
+  const hasOldPrice = typeof product.oldPrice === "number" && product.oldPrice !== product.price;
+
+  // Déterminer la couleur de la flèche en fonction de la différence de prix
+  const arrowColor = hasOldPrice ? (product.oldPrice < product.price ? "red" : "green") : "transparent";
+
+  // Générer l'HTML pour l'affichage du prix et de l'ancien prix avec les flèches
+  const priceHTML = hasOldPrice
+    ? `<p class="current-price" style="color: ${arrowColor}">${product.price} € ${
+        arrowColor === "red" ? "↑" : "↓"
+      }</p><p class="old-price">${product.oldPrice} €</p>`
+    : `<p class="current-price">${product.price} €</p>`;
 
   productElement.innerHTML = `
     <img src="${product.image}" alt="${product.name}">
     <h3>${product.name}</h3>
-    <p>Prix: ${product.price} € ${priceComparisonArrow}</p>
-    <p>Ancien prix: ${oldPrice.toFixed(2)} €</p>
+    ${priceHTML}
     <p>Supermarché: ${product.supermarket}</p>
-    <p>Dernière modification: ${product.lastModified.toLocaleDateString(
-      "fr-FR"
-    )}</p>
-    <p>Quantité en stock: <span style="color: ${
-      product.quantity < product.stockThreshold ? "red" : "inherit"
-    }">${product.quantity}</span></p>
-    ${
-      product.quantity < product.stockThreshold
-        ? "<p>Bientôt en rupture de stock</p>"
-        : ""
-    }
+    <p>Dernière modification: ${product.lastModified.toLocaleDateString("fr-FR")}</p>
+    <p>Quantité en stock: <span style="color: ${product.quantity < product.stockThreshold ? "red" : "inherit"}">${
+    product.quantity
+  }</span></p>
+    ${product.quantity < product.stockThreshold ? "<p>Bientôt en rupture de stock</p>" : ""}
   `;
 
   return productElement;
 }
+
 
   
  const showOutOfStockBtn = document.getElementById("showOutOfStockBtn"); 
