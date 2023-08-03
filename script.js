@@ -4,7 +4,8 @@
      category: 'Pizza', 
      name: 'Pizza Tonno ×2 3€49', 
      image: 'https://imgproxy-retcat.assets.schwarz/FSkIHuKOk0EJaN0D3QKJAUGKzjBxe1_RI8d6J80ko-k/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvbmwvMS80NkRERkNBMjgxM0M0QjBGMkU2NEFBMjJ/EMUIyREY4Q0FCRDY0QkE0MDA5QTkxMjYzMzI3OUVFM0ExQjFCMEVDLmpwZw.jpg', 
-     price: 1.75, 
+     price: 10.75, 
+oldPrice: 1.50, // Ajoutez l'ancien prix ici
      supermarket: 'Lidl', 
      lastModified: new Date('2023-08-01'), 
    }, 
@@ -324,33 +325,44 @@
  } 
   
  // Fonction pour créer l'élément HTML représentant un produit 
- function createProductElement(product) { 
-   const productElement = document.createElement("div"); 
-   productElement.classList.add("product"); 
-   if (product.quantity <= product.stockThreshold) { 
-     productElement.classList.add("out-of-stock"); 
-   } 
-   productElement.innerHTML = ` 
-       <img src="${product.image}" alt="${product.name}"> 
-       <h3>${product.name}</h3> 
-       <p>Prix: ${product.price} €</p> 
-       <p>Supermarché: ${product.supermarket}</p> 
-       <p>Dernière modification: ${product.lastModified.toLocaleDateString( 
-         "fr-FR" 
-       )}</p> 
-       <p>Quantité en stock: <span style="color: ${ 
-         product.quantity < product.stockThreshold ? "red" : "inherit" 
-       }">${product.quantity}</span></p> 
-       ${ 
-         product.quantity < product.stockThreshold 
-           ? "<p>Bientôt en rupture de stock</p>" 
-           : "" 
-       } 
-     `; 
-  
-  
-   return productElement; 
- } 
+ function createProductElement(product) {
+  const productElement = document.createElement("div");
+  productElement.classList.add("product");
+  if (product.quantity <= product.stockThreshold) {
+    productElement.classList.add("out-of-stock");
+  }
+
+  // Ajout de l'ancien prix
+  const oldPrice = product.price * 1.2; // Par exemple, multiplions le prix par 1.2 pour obtenir un ancien prix fictif
+  const priceComparisonArrow =
+    product.price > oldPrice
+      ? '<span class="arrow-up">&#9650;</span>'
+      : product.price < oldPrice
+      ? '<span class="arrow-down">&#9660;</span>'
+      : '';
+
+  productElement.innerHTML = `
+    <img src="${product.image}" alt="${product.name}">
+    <h3>${product.name}</h3>
+    <p>Prix: ${product.price} € ${priceComparisonArrow}</p>
+    <p>Ancien prix: ${oldPrice.toFixed(2)} €</p>
+    <p>Supermarché: ${product.supermarket}</p>
+    <p>Dernière modification: ${product.lastModified.toLocaleDateString(
+      "fr-FR"
+    )}</p>
+    <p>Quantité en stock: <span style="color: ${
+      product.quantity < product.stockThreshold ? "red" : "inherit"
+    }">${product.quantity}</span></p>
+    ${
+      product.quantity < product.stockThreshold
+        ? "<p>Bientôt en rupture de stock</p>"
+        : ""
+    }
+  `;
+
+  return productElement;
+}
+
   
  const showOutOfStockBtn = document.getElementById("showOutOfStockBtn"); 
  showOutOfStockBtn.addEventListener("click", displayOutOfStockProducts); 
