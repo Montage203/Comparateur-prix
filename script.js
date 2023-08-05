@@ -5,6 +5,7 @@
      name: 'Balade crème culinaire 1L', 
      image: 'https://www.balade.be/userfiles/product/05411396034176a7n1se05068-av2.png', 
      price: 5.85, 
+     oldprice: 1.2,
      supermarket: 'Colruyt', 
      lastModified: new Date('2023-08-02'), 
    }, 
@@ -350,6 +351,7 @@
        <img src="${product.image}" alt="${product.name}"> 
        <h3>${product.name}</h3> 
        <p>Prix: ${product.price} €</p> 
+       <p>Ancien prix: ${product.oldprice} €</p>
        <p>Supermarché: ${product.supermarket}</p> 
        <p>Dernière modification: ${product.lastModified.toLocaleDateString( 
          "fr-FR" 
