@@ -89,23 +89,6 @@
   ];
 
 
-function displayStoreOpeningHours(storeName, hours) {
-  const openingHoursElement = document.getElementById("opening-hours");
-  const daysOfWeek = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-  const today = new Date().getDay(); // Récupérer le jour de la semaine actuel (0 - Dimanche, 1 - Lundi, etc.)
-
-  if (hours[today] !== "Fermé") {
-    openingHoursElement.innerHTML += `<h3>Magasins ouverts aujourd'hui :</h3>`;
-    openingHoursElement.innerHTML += `<p>${storeName} : ${daysOfWeek[today]} ${hours[today]}</p>`;
-  }
-}
-
-// Utilisation
-stores.forEach(store => {
-  displayStoreOpeningHours(store.name, store.hours);
-});
-
-
 
   function displayOpenStores() {
     const today = new Date().getDay();
@@ -143,6 +126,27 @@ stores.forEach(store => {
   }
 
   displayOpenStores();
+
+
+
+
+function displayStoreOpeningHours(storeName, hours) {
+  const openingHoursElement = document.getElementById("opening-hours");
+  const daysOfWeek = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+  const today = new Date().getDay(); // Récupérer le jour de la semaine actuel (0 - Dimanche, 1 - Lundi, etc.)
+
+  if (hours[today] !== "Fermé") {
+    openingHoursElement.innerHTML += `<h3>Magasins ouverts aujourd'hui :</h3>`;
+    openingHoursElement.innerHTML += `<p>${storeName} : ${daysOfWeek[today]} ${hours[today]}</p>`;
+  }
+}
+
+// Utilisation
+stores.forEach(store => {
+  displayStoreOpeningHours(store.name, store.hours);
+});
+
+
 </script>
 
 </body>
