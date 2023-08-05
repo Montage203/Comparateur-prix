@@ -1,5 +1,21 @@
 // Données des produits 
  const products = [ 
+{ 
+     category: 'Aclasser', 
+     name: 'Balade crème culinaire 1L', 
+     image: 'https://www.balade.be/userfiles/product/05411396034176a7n1se05068-av2.png', 
+     price: 5.85, 
+     supermarket: 'Colruyt', 
+     lastModified: new Date('2023-08-02'), 
+   }, 
+{ 
+     category: 'Aclasser', 
+     name: 'Boni Bacon fumé 2x100g', 
+     image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/30/27/asset-3133027.jpg', 
+     price: 2.20, 
+     supermarket: 'Colruyt', 
+     lastModified: new Date('2023-08-02'), 
+   }, 
  { 
      category: 'Pizza', 
      name: 'Pizza Tonno ×2 3€49', 
@@ -398,7 +414,7 @@
 { 
        name: "Aclasser", 
        image: 
-         "https://www.111tampons.com/medias/article/a_classer.png", 
+         "", 
      },
       { 
        name: "Tout les produits", 
