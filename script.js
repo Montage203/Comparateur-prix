@@ -235,7 +235,7 @@
          <img src="${product.image}" alt="${product.name}"> 
          <h3>${product.name}</h3> 
          <p>Prix: ${product.price} €</p> 
-         <p>Ancien prix: ${product.oldprice} €</p>
+<p>Ancien prix: ${product.oldprice} €</p>
          <p>Supermarché: ${product.supermarket}</p> 
          <p>Dernière modification: ${product.lastModified.toLocaleDateString( 
            "fr-FR" 
@@ -352,7 +352,7 @@
        <img src="${product.image}" alt="${product.name}"> 
        <h3>${product.name}</h3> 
        <p>Prix: ${product.price} €</p> 
-       <p>Ancien prix: ${product.oldprice} €</p>
+<p>Ancien prix: ${product.oldprice} €</p>
        <p>Supermarché: ${product.supermarket}</p> 
        <p>Dernière modification: ${product.lastModified.toLocaleDateString( 
          "fr-FR" 
