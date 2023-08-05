@@ -59,6 +59,16 @@
   <footer>
     <p id="products-by-supermarket">Produits par supermarché :</p>
     <p id="total-products">Nombre total de produits :</p>
+
+<div id="open-stores">
+  <h3>Magasins ouverts aujourd'hui :</h3>
+  <ul id="store-list"></ul>
+</div>
+
+<div id="store-info">
+  <!-- Les informations sur le magasin sélectionné seront affichées ici -->
+</div>
+
     <button id="verify-button">Voir les produits à vérifier</button>
     <button id="showOutOfStockBtn">Afficher les produits en stock</button>
   </footer>
@@ -68,5 +78,50 @@
 <script src="script2.js"></script>
 <link rel="stylesheet" href="style3.css">
 <script src="script3.js"></script>
+
+<script>
+  const stores = [
+    { name: "Lidl", hours: ["8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 19h00", "Fermé"] },
+    // ... Ajoutez d'autres magasins ici
+  ];
+
+  function displayOpenStores() {
+    const today = new Date().getDay();
+    const storeList = document.getElementById("store-list");
+    storeList.innerHTML = "";
+
+    stores.forEach((store) => {
+      const openingHours = store.hours[today];
+      if (openingHours !== "Fermé") {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `${store.name} : ${openingHours}`;
+        storeList.appendChild(listItem);
+
+        listItem.addEventListener("click", () => {
+          displayStoreOpeningHours(store);
+        });
+      }
+    });
+  }
+
+  function displayStoreOpeningHours(store) {
+    const storeInfo = document.getElementById("store-info");
+    storeInfo.innerHTML = `
+      <h3>Heures d'ouverture de la semaine pour ${store.name} :</h3>
+      <ul>
+        <li>Lundi : ${store.hours[0]}</li>
+        <li>Mardi : ${store.hours[1]}</li>
+        <li>Mercredi : ${store.hours[2]}</li>
+        <li>Jeudi : ${store.hours[3]}</li>
+        <li>Vendredi : ${store.hours[4]}</li>
+        <li>Samedi : ${store.hours[5]}</li>
+        <li>Dimanche : ${store.hours[6]}</li>
+      </ul>
+    `;
+  }
+
+  displayOpenStores();
+</script>
+
 </body>
 </html>
