@@ -237,37 +237,39 @@
  } 
   
  // Fonction pour afficher les produits 
- function displayProducts(products) { 
-   const productContainer = document.getElementById("product-list"); 
-   productContainer.innerHTML = ""; 
-  
-   products.forEach((product) => { 
-     const productElement = document.createElement("div"); 
-     productElement.classList.add("product"); 
-     if (product.quantity <= product.stockThreshold) { 
-       productElement.classList.add("out-of-stock"); 
-     } 
-     productElement.innerHTML = ` 
-         <img src="${product.image}" alt="${product.name}"> 
-         <h3>${product.name}</h3> 
-         <p>Prix: ${product.price} €</p> 
-<p>Ancien prix: ${product.oldprice} €</p>
-         <p>Supermarché: ${product.supermarket}</p> 
-         <p>Dernière modification: ${product.lastModified.toLocaleDateString( 
-           "fr-FR" 
-         )}</p> 
-         <p>Quantité en stock: <span style="color: ${ 
-           product.quantity < product.stockThreshold ? "red" : "inherit" 
-         }">${product.quantity}</span></p> 
-         ${ 
-           product.quantity < product.stockThreshold 
-             ? "<p>Bientôt en rupture de stock</p>" 
-             : "" 
-         } 
-       `; 
-     productContainer.appendChild(productElement); 
-   }); 
- } 
+ function displayProducts(products) {
+  const productContainer = document.getElementById("product-list");
+  productContainer.innerHTML = "";
+
+  products.forEach((product) => {
+    const productElement = document.createElement("div");
+    productElement.classList.add("product");
+    if (product.quantity <= product.stockThreshold) {
+      productElement.classList.add("out-of-stock");
+    }
+    productElement.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>Prix: ${product.price} €</p>
+      <p>Ancien prix: ${product.oldprice} €</p>
+      <p>Supermarché: ${product.supermarket}</p>
+      <p>Dernière modification: ${product.lastModified.toLocaleDateString(
+        "fr-FR"
+      )}</p>
+      <p>Quantité en stock: <span style="color: ${
+        product.quantity < product.stockThreshold ? "red" : "inherit"
+      }">${product.quantity}</span></p>
+      ${
+        product.quantity < product.stockThreshold
+          ? "<p>Bientôt en rupture de stock</p>"
+          : ""
+      }
+    `;
+
+    productContainer.appendChild(productElement);
+  });
+}
+
   
  // Fonction pour afficher le nombre total de produits et le nombre de produits par supermarché 
  function displayProductStats() { 
