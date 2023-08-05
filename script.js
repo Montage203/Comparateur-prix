@@ -395,7 +395,12 @@
        image: 
          "https://www.destockplus.com/upload/300112_124446_PEEL_hvuejMpV.jpg", 
      }, 
-     { 
+{ 
+       name: "Aclasser", 
+       image: 
+         "https://www.111tampons.com/medias/article/a_classer.png", 
+     },
+      { 
        name: "Tout les produits", 
        image: 
          "https://media.sudouest.fr/7083913/1000x500/gdfgdfg.jpg?v=1637768353", 
