@@ -51,24 +51,26 @@ function getTimeDifference(product) {
   }
   
   // Fonction pour afficher la liste des produits à vérifier
-  function displayProductsToVerify(products) {
-    const productContainer = document.getElementById('product-list');
-    productContainer.innerHTML = '';
-  
-    products.forEach(product => {
-      const productElement = document.createElement('div');
-      productElement.classList.add('product-to-verify');
-  
-      productElement.innerHTML = `
-        <h3>${product.name}</h3>
-        <p>Prix: ${product.price} €</p>
-        <p>Supermarché: ${product.supermarket}</p>
-        <p>Dernière modification: ${product.lastModified.toLocaleDateString('fr-FR')}</p>
-      `;
-  
-      productContainer.appendChild(productElement);
-    });
-  }
+
+function displayProductsToVerify(products) {
+  const productContainer = document.getElementById('product-list');
+  productContainer.innerHTML = '';
+
+  products.forEach(product => {
+    const productElement = document.createElement('div');
+    productElement.classList.add('product-to-verify');
+
+    productElement.innerHTML = `
+      <h3>${product.name}</h3>
+      <p>Prix: ${product.price} €</p>
+      <p>Supermarché: ${product.supermarket}</p>
+      <p>Dernière modification: ${product.lastModified.toLocaleDateString('fr-FR')}</p>
+    `;
+
+    productContainer.appendChild(productElement);
+  });
+}
+
   
   // Fonction pour cacher le site et afficher la liste des produits à vérifier
   function showProductsToVerify() {
