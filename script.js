@@ -22,6 +22,7 @@
      image: '', 
      price: 0.25, 
      supermarket: 'Carrefour-express', 
+lastModified: new Date('2024-08-06'),
    }, 
 { 
      category: 'Pain', 
