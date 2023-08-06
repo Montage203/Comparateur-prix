@@ -1,6 +1,62 @@
 // Données des produits 
  const products = [ 
- 
+{ 
+     category: 'Aclasser', 
+     name: 'Balade crème culinaire 1L', 
+     image: 'https://www.balade.be/userfiles/product/05411396034176a7n1se05068-av2.png', 
+     price: 5.85, 
+     oldprice: 1,
+     supermarket: 'Colruyt', 
+     lastModified: new Date('2023-08-02'), 
+   }, 
+{ 
+     category: 'Aclasser', 
+     name: 'Boni Bacon fumé 2x100g', 
+     image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/30/27/asset-3133027.jpg', 
+     price: 2.20, 
+     supermarket: 'Colruyt', 
+     lastModified: new Date('2023-08-02'), 
+   }, 
+{ 
+     category: 'Aclasser', 
+     name: 'Everyday citrons', 
+     image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/70/48/asset-837048.jpg', 
+     price: 1.69, 
+     supermarket: 'Colruyt', 
+     lastModified: new Date('2023-08-02'), 
+   }, 
+{ 
+     category: 'Aclasser', 
+     name: 'Botte de jeunes carrottes à feuillage', 
+     image: 'https://www.colruyt.be/content/dam/clp/lekker-koken/kooktips/lentegroenten/wortel_sfeer_bot_tafel.png/_jcr_content/renditions/cq5dam.web.1280.1280.png', 
+     price: 1.49, 
+     supermarket: 'Colruyt', 
+     lastModified: new Date('2023-08-02'), 
+   }, 
+{ 
+     category: 'Aclasser', 
+     name: 'chou-fleur 1pc', 
+     image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/86/79/asset-348679.jpg', 
+     price: 1.99, 
+     supermarket: 'Colruyt', 
+     lastModified: new Date('2023-08-02'), 
+   }, 
+{ 
+     category: 'Aclasser', 
+     name: 'Boni huile d\'olive extra vierge 1L', 
+     image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/62/64/asset-2516264.jpg', 
+     price: 7.98, 
+     supermarket: 'Colruyt', 
+     lastModified: new Date('2023-08-02'), 
+   }, 
+{ 
+     category: 'Aclasser', 
+     name: 'Poulet entier 1k3 5€28 (4€09 les 1,291kg)', 
+     image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/05/72/asset-3120572.jpg', 
+     price: 4.09, 
+     supermarket: 'Colruyt', 
+     lastModified: new Date('2023-08-02'), 
+   },  
  { 
      category: 'Pizza', 
      name: 'Pizza Tonno ×2 3€49', 
