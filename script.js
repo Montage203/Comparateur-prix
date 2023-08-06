@@ -5,7 +5,7 @@
      name: 'La lorraine Pain campagne blanc', 
      image: 'https://static.delhaize.be/medias/sys_master/h06/hca/11211548229662.jpg', 
      price: 2.99, 
-     supermarket: 'Carrefour-express Pompe', 
+     supermarket: 'Carrefour-express', 
      lastModified: new Date('2023-08-06'), 
    }, 
 { 
