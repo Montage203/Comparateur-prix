@@ -1,6 +1,14 @@
 // Données des produits 
  const products = [ 
 { 
+     category: 'Pain', 
+     name: 'La lorraine Pain campagne blanc', 
+     image: 'https://static.delhaize.be/medias/sys_master/h06/hca/11211548229662.jpg', 
+     price: 2.99, 
+     supermarket: 'Carrefour-express', 
+     lastModified: new Date('2023-08-06'), 
+   }, 
+{ 
      category: 'Aclasser', 
      name: 'Balade crème culinaire 1L', 
      image: 'https://www.balade.be/userfiles/product/05411396034176a7n1se05068-av2.png', 
