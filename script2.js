@@ -88,7 +88,7 @@ function displayProductsToVerify(products) {
       const currentDate = new Date();
       const timeDifference = currentDate.getTime() - product.lastModified.getTime();
       const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
-      return daysDifference >= 15;
+      return daysDifference >= 30;
     });
   
     displayProductsToVerify(productsToVerify);
