@@ -19,7 +19,7 @@
  
      category: 'Aclasser', 
      name: 'Sac papier/plastique', 
-     image: 'png', 
+     image: 'https://onsefaitunebouffe.fr/wp-content/uploads/2020/05/LivraisonsCourses-CarrefourExpress.jpg', 
      price: 0.25, 
      supermarket: 'Carrefour-express', 
 lastModified: new Date('2024-08-06'),
