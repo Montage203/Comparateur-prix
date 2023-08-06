@@ -4,7 +4,7 @@ function getTimeDifference(product) {
     const timeDifference = currentDate.getTime() - product.lastModified.getTime();
     const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
     const maxDays = 60; // Jours au-delà desquels la couleur sera rouge (2 mois)
-    const minDays = 30; // Jours à partir desquels la couleur commencera à changer
+    const minDays = 1; // Jours à partir desquels la couleur commencera à changer
   
     if (daysDifference >= maxDays) {
       product.lastModifiedStyle = `border: 2px solid red`;
@@ -88,7 +88,7 @@ function displayProductsToVerify(products) {
       const currentDate = new Date();
       const timeDifference = currentDate.getTime() - product.lastModified.getTime();
       const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
-      return daysDifference >= 30;
+      return daysDifference >= 1;
     });
   
     displayProductsToVerify(productsToVerify);
