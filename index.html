@@ -81,13 +81,12 @@
 
 <script>
   const stores = [
-  { name: "Lidl", hours: ["8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 19h00", "Fermé"] },
-  { name: "Aldi", hours: ["8h30 - 19h00", "8h30 - 19h00", "8h30 - 19h00", "8h30 - 19h00", "8h30 - 19h00", "Fermé", "8h30 - 19h00"] },
-  { name: "Colruyt", hours: ["8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 21h00", "Fermé", "8h30 - 20h00"] },
-  { name: "Intermarché", hours: ["8h00 - 12h00", "12h00 - 20h00", "9h00 - 20h00", "9h00 - 20h00", "9h00 - 20h00", "9h00 - 20h00", "9h00 - 20h00"] },
-  { name: "Carrefour Express", hours: ["8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00"] },
-];
-
+    { name: "Lidl", hours: ["8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 19h00"] },
+    { name: "Aldi", hours: ["8h30 - 19h00", "8h30 - 19h00", "8h30 - 19h00", "8h30 - 19h00", "8h30 - 19h00", "8h30 - 19h00", "Fermé"] },
+    { name: "Colruyt", hours: ["8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 20h00", "8h30 - 21h00", "8h30 - 20h00", "Fermé"] },
+    { name: "Intermarché", hours: ["8h00 - 12h00", "12h00 - 20h00", "9h00 - 20h00", "9h00 - 20h00", "9h00 - 20h00", "9h00 - 20h00", "9h00 - 20h00"] },
+    { name: "Carrefour Express", hours: ["8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00", "8h00 - 18h00"] },
+  ];
 
   function displayOpenStores() {
     const today = new Date().getDay();
@@ -110,24 +109,24 @@
 
   function displayStoreOpeningHours(store) {
     const storeInfo = document.getElementById("store-info");
+    const days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+    const today = new Date().getDay();
+
+    const openingHours = store.hours.slice(today).concat(store.hours.slice(0, today));
+    
+    const hoursList = openingHours.map((hours, index) => `<li>${days[index]} : ${hours}</li>`).join("");
+
     storeInfo.innerHTML = `
       <h3>Heures d'ouverture de la semaine pour ${store.name} :</h3>
-      <ul style="list-style: none;">
-        <li>Lundi : ${store.hours[0]}</li>
-        <li>Mardi : ${store.hours[1]}</li>
-        <li>Mercredi : ${store.hours[2]}</li>
-        <li>Jeudi : ${store.hours[3]}</li>
-        <li>Vendredi : ${store.hours[4]}</li>
-        <li>Samedi : ${store.hours[5]}</li>
-        <li>Dimanche : ${store.hours[6]}</li>
+      <ul>
+        ${hoursList}
       </ul>
     `;
   }
 
   displayOpenStores();
-
-
 </script>
+
 
 </body>
 </html>
