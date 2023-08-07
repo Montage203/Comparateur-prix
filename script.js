@@ -308,22 +308,19 @@ lastModified: new Date('2023-08-06'),
       productElement.classList.add("out-of-stock");
     }
     productElement.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p>Prix: ${product.price} € <i style= color:gray>${product.ancienprice} €</i></p> 
-      <p>Supermarché: ${product.supermarket}</p>
-      <p>Dernière modification: ${product.lastModified.toLocaleDateString(
-        "fr-FR"
-      )}</p>
-      <p>Quantité en stock: <span style="color: ${
-        product.quantity < product.stockThreshold ? "red" : "inherit"
-      }">${product.quantity}</span></p>
-      ${
-        product.quantity < product.stockThreshold
-          ? "<p>Bientôt en rupture de stock</p>"
-          : ""
-      }
-    `;
+  <img src="${product.image}" alt="${product.name}">
+  <h3>${product.name}</h3>
+  <p>Prix: ${product.price} € ${
+  product.ancienprice !== undefined ? `<i style="color: gray">${product.ancienprice} €</i>` : ''
+}</p>
+<p>Supermarché: ${product.supermarket}</p>
+<p>Dernière modification: ${product.lastModified.toLocaleDateString("fr-FR")}</p>
+${product.quantity !== undefined ? `<p>Quantité en stock: <span style="color: ${
+  product.quantity < product.stockThreshold ? 'red' : 'inherit'
+}">${product.quantity}</span></p>` : ''}
+${product.quantity !== undefined && product.quantity < product.stockThreshold ? '<p>Bientôt en rupture de stock</p>' : ''}
+`;
+
 
     productContainer.appendChild(productElement);
   });
