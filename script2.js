@@ -29,10 +29,16 @@ function displayProducts(products) {
     const productContainer = document.getElementById('product-list');
     productContainer.innerHTML = '';
     
-    // Trier les produits par ordre d'importance et de magasin
+    // Trier les produits par ordre de magasin et par date la plus ancienne
     products.sort((a, b) => {
         // Comparer le magasin
-        return a.supermarket.localeCompare(b.supermarket);
+        const supermarketComparison = a.supermarket.localeCompare(b.supermarket);
+        if (supermarketComparison !== 0) {
+            return supermarketComparison;
+        }
+        
+        // Comparer la date la plus ancienne
+        return a.lastModified - b.lastModified;
     });
     
     products.forEach(product => {
@@ -65,19 +71,7 @@ function showProductsToVerify() {
 
     productList.appendChild(verifyButton);
 
-    const currentDate = new Date();
-    const productsToVerify = products.filter(product => {
-        const timeDifference = currentDate.getTime() - product.lastModified.getTime();
-        const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
-        return daysDifference >= 30;
-    });
-
-    // Trier les produits à vérifier par magasin
-    productsToVerify.sort((a, b) => {
-        return a.supermarket.localeCompare(b.supermarket);
-    });
-
-    displayProducts(productsToVerify);
+    displayProducts(products); // Afficher tous les produits dans la liste de vérification
 }
 
 // Fonction pour afficher tous les produits
