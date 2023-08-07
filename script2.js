@@ -100,10 +100,7 @@ function showProductsToVerify() {
     productList.appendChild(verifyButton);
 
     const productsToVerify = products.filter(product => {
-        const currentDate = new Date();
-        const timeDifference = currentDate.getTime() - product.lastModified.getTime();
-        const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
-        return daysDifference >= 30;
+        return product.addToVerifyList; // Utiliser la propriété addToVerifyList définie dans getTimeDifference
     });
 
     displayProductsToVerify(productsToVerify);
