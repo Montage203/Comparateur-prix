@@ -193,7 +193,7 @@ lastModified: new Date('2023-08-06'),
        "https://imgproxy-retcat.assets.schwarz/P3XJC4cUGaP4GHd9L6PidzzcVTxVcyRo-_rBwce9zVs/sm:1/w:1500/h:1125/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYmUvMS80RUYzMDRDNTAxQzJBNzI0NzVEMUY0OUM/zQzY2MTk1OEQwMTU3ODBBMDU4MDZFRUZBOTNEMjkyNTFFOTJENkRELmpwZw.jpg", 
      price: 2.19, 
      supermarket: "Lidl", 
-     lastModified: new Date("2023-07-22"), 
+     lastModified: new Date("2023-08-07"), 
    }, 
    { 
      category: "Choco", 
