@@ -5,7 +5,8 @@
      category: 'Aclasser', 
      name: 'Sachet fruit réutilisable', 
      image: 'https://i0.wp.com/www.retaildetail.be/wp-content/uploads/2022/04/759665_7K29-CG-PS-plastic-zakje0003.jpg?resize=768%2C454&quality=100&strip=all&ssl=1', 
-     price: 0.55, 
+     price: 0.55,
+ancienprice: 0.55,
      supermarket: 'Colruyt', 
      lastModified: new Date('2023-08-02'), 
    }, 
@@ -14,6 +15,7 @@
      name: 'Sachet fruit réutilisable', 
      image: 'https://cdn.uc.assets.prezly.com/ea0071a8-7d2f-49b6-85b1-95b23232bfee/-/preview/1000x1500/-/format/auto/DSC_2904.jpg', 
      price: 0.55, 
+ancienprice: 0.50,
      supermarket: 'Carrefour-express', 
      lastModified: new Date('2023-08-06'), 
       }, 
@@ -308,6 +310,7 @@ lastModified: new Date('2023-08-06'),
       <img src="${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
       <p>Prix: ${product.price} €</p>
+<p>Ancien prix: ${product.ancienprice} €</p> 
       <p>Supermarché: ${product.supermarket}</p>
       <p>Dernière modification: ${product.lastModified.toLocaleDateString(
         "fr-FR"
@@ -425,7 +428,8 @@ lastModified: new Date('2023-08-06'),
    productElement.innerHTML = ` 
        <img src="${product.image}" alt="${product.name}"> 
        <h3>${product.name}</h3> 
-       <p>Prix: ${product.price} €</p> 
+       <p>Prix: ${product.price} €</p>
+<p>Ancien prix: ${product.ancienprice} €</p> 
        <p>Supermarché: ${product.supermarket}</p> 
        <p>Dernière modification: ${product.lastModified.toLocaleDateString( 
          "fr-FR" 
