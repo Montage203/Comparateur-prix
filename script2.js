@@ -9,7 +9,6 @@ function getTimeDifference(product) {
     const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
     const maxDays = 60; // Nouvelle valeur pour le maximum de jours
     const changeColorDays = 30; // Nouvelle valeur pour le changement de couleur
-    const addToVerifyListDays = 30; // Jours à partir desquels le produit est ajouté à la liste de vérification
     
     if (daysDifference >= maxDays) {
         product.lastModifiedStyle = `border: 2px solid red`;
@@ -23,12 +22,6 @@ function getTimeDifference(product) {
     } else {
         product.lastModifiedStyle = '';
     }
-    
-    if (daysDifference >= addToVerifyListDays) {
-        product.addToVerifyList = true;
-    } else {
-        product.addToVerifyList = false;
-    }
 }
 
 // Fonction pour afficher les produits en tenant compte de leur âge
@@ -38,13 +31,6 @@ function displayProducts(products) {
     
     // Trier les produits par ordre d'importance et de magasin
     products.sort((a, b) => {
-        // Comparer l'importance
-        if (a.important && !b.important) {
-            return -1;
-        } else if (!a.important && b.important) {
-            return 1;
-        }
-        
         // Comparer le magasin
         return a.supermarket.localeCompare(b.supermarket);
     });
@@ -69,26 +55,6 @@ function displayProducts(products) {
 }
 
 // Fonction pour afficher la liste des produits à vérifier
-function displayProductsToVerify(products) {
-    const productContainer = document.getElementById('product-list');
-    productContainer.innerHTML = '';
-
-    products.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.classList.add('product-to-verify');
-
-        productElement.innerHTML = `
-            <h3>${product.name}</h3>
-            <p>Prix: ${product.price} €</p>
-            <p>Supermarché: ${product.supermarket}</p>
-            <p>Dernière modification: ${product.lastModified.toLocaleDateString('fr-FR')}</p>
-        `;
-
-        productContainer.appendChild(productElement);
-    });
-}
-
-// Fonction pour cacher le site et afficher la liste des produits à vérifier
 function showProductsToVerify() {
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
@@ -99,11 +65,19 @@ function showProductsToVerify() {
 
     productList.appendChild(verifyButton);
 
+    const currentDate = new Date();
     const productsToVerify = products.filter(product => {
-        return product.addToVerifyList; // Utiliser la propriété addToVerifyList définie dans getTimeDifference
+        const timeDifference = currentDate.getTime() - product.lastModified.getTime();
+        const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
+        return daysDifference >= 30;
     });
 
-    displayProductsToVerify(productsToVerify);
+    // Trier les produits à vérifier par magasin
+    productsToVerify.sort((a, b) => {
+        return a.supermarket.localeCompare(b.supermarket);
+    });
+
+    displayProducts(productsToVerify);
 }
 
 // Fonction pour afficher tous les produits
