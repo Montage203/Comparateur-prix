@@ -309,8 +309,7 @@ lastModified: new Date('2023-08-06'),
     productElement.innerHTML = `
       <img src="${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
-      <p>Prix: ${product.price} €</p>
-<p>Ancien prix: ${product.ancienprice} €</p> 
+      <p>Prix: ${product.price} € <div style= color:gray>${product.ancienprice} €</div></p> 
       <p>Supermarché: ${product.supermarket}</p>
       <p>Dernière modification: ${product.lastModified.toLocaleDateString(
         "fr-FR"
@@ -428,8 +427,7 @@ lastModified: new Date('2023-08-06'),
    productElement.innerHTML = ` 
        <img src="${product.image}" alt="${product.name}"> 
        <h3>${product.name}</h3> 
-       <p>Prix: ${product.price} €</p>
-<p>Ancien prix: ${product.ancienprice} €</p> 
+       <p>Prix: ${product.price} € <div style= color:gray>${product.ancienprice} €</div></p> 
        <p>Supermarché: ${product.supermarket}</p> 
        <p>Dernière modification: ${product.lastModified.toLocaleDateString( 
          "fr-FR" 
