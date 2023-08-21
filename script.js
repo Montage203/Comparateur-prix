@@ -26,7 +26,7 @@
       lastModified: new Date('2023-08-07'),  
     }, 
 {  
-      category: 'Aclasser',  
+      category: 'Fruit',  
       name: 'Banane Boni ±1kg 1€74 (1€99 le 1kg)',  
       image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/79/42/asset-1767942.jpg',  
       price: 1.99,  
@@ -491,6 +491,16 @@ ${product.quantity !== undefined && product.quantity < product.stockThreshold ? 
        { name: 'Papier toilette', image: 'https://cdn.webshopapp.com/shops/291748/files/331481689/1000x1000x2/jantex-toiletpapier-premium-40-stuk-3-laags-170-ve.jpg' }, 
        { name: 'Lasagne', image: 'https://images.radio-canada.ca/v1/alimentation/recette/4x3/lasagne-25129.jpg' }, 
        */ 
+{  
+        name: "Fruit",  
+        image:  
+          "https://www.pourquoidocteur.fr/media/article/COPY_istock-529664572-1674231819.jpg",
+      },  
+{  
+        name: "Legume",  
+        image:  
+          "https://www.alexetalex.com/wp-content/uploads/2020/01/2-6.png",  
+      },  
      { 
        name: "Eau", 
        image: 
