@@ -1,6 +1,38 @@
 // Données des produits 
  const products = [ 
 
+{  
+      category: 'Aclasser',  
+      name: 'Lasagne bolognaise 1kg Everyday',  
+      image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/71/94/asset-1817194.jpg',  
+      price: 2.79, 
+      supermarket: 'Colruyt',  
+      lastModified: new Date('2023-08-07'),  
+    }, 
+{  
+      category: 'Aclasser',  
+      name: 'Sandwich au beurre 10pc Everyday',  
+      image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/86/34/asset-1228634.jpg',  
+      price: 1.15, 
+      supermarket: 'Colruyt',  
+      lastModified: new Date('2023-08-07'),  
+    }, 
+{  
+      category: 'Choco',  
+      name: 'Pâte à tartiner noisette 200g Boni',  
+      image: 'https://static.colruytgroup.com/images/646x1000/std.lang.all/83/84/asset-3028384.jpg',  
+      price: 1.97, 
+      supermarket: 'Colruyt',  
+      lastModified: new Date('2023-08-07'),  
+    }, 
+{  
+      category: 'Aclasser',  
+      name: 'Banane Boni ±1kg 1€74 (1€99 le 1kg)',  
+      image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/79/42/asset-1767942.jpg',  
+      price: 1.99,  
+      supermarket: 'Colruyt',  
+      lastModified: new Date('2023-08-07'),  
+    },  
 { 
      category: 'Aclasser', 
      name: 'Sachet fruit réutilisable', 
