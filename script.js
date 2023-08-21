@@ -203,9 +203,10 @@ lastModified: new Date('2023-08-06'),
      name: "Delinut 750g tartine", 
      image: 
        "https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/2907/1/0/_jcr_content/assets/imported-images/BILD_INTERNET11/2907_hazelnootpasta_1.png/_jcr_content/renditions/opt.1250w.png.res/1680046698759/opt.1250w.png", 
-     price: 2.55, 
+     price: 2.29, 
+ancienprice: 2.55,
      supermarket: "Aldi", 
-     lastModified: new Date("2023-07-22"), 
+     lastModified: new Date("2023-08-17"), 
    }, 
    { 
      category: "Entretien", 
