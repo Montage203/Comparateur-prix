@@ -67,7 +67,7 @@ lastModified: new Date('2023-08-06'),
      price: 2.99, 
 ancienprice: 2.99,
      supermarket: 'Carrefour-express', 
-     lastModified: new Date('2023-08-28'), 
+     lastModified: new Date('2023-09-08'), 
    }, 
 { 
      category: 'Aclasser', 
