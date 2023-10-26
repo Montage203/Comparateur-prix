@@ -3,7 +3,7 @@
 
 {  
       category: 'Aclasser',  
-      name: 'Saucisson de jambon 200g Boni,  
+      name: 'Saucisson de jambon 200g Boni',  
       image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/08/17/asset-710817.jpg',  
       price: 1.29, 
       supermarket: 'Colruyt',  
