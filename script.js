@@ -2,6 +2,14 @@
  const products = [ 
 
 {  
+      category: 'Aclasser',  
+      name: 'Saucisson de jambon 200g Boni,  
+      image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/08/17/asset-710817.jpg',  
+      price: 1.29, 
+      supermarket: 'Colruyt',  
+      lastModified: new Date('2023-08-10'),  
+    }, 
+{  
       category: 'Pain',  
       name: 'Pain 600/800g (Sac 2/3) Carrefour',  
       image: 'https://cdn.carrefour.eu/1200_06675813_T19.jpeg',  
