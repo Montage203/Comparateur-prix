@@ -2,6 +2,14 @@
  const products = [ 
 
 {  
+      category: 'Pain',  
+      name: 'Pain 600/800g Carrefour',  
+      image: 'https://cdn.carrefour.eu/1200_06675813_T19.jpeg',  
+      price: 2.85, 
+      supermarket: 'Carrefour',  
+      lastModified: new Date('2023-08-08'),  
+    }, 
+{  
       category: 'Choco',  
       name: 'Chocolat au lait 100g Bio Carrefour',  
       image: 'https://cdn.carrefour.eu/420_06751147_3270190128151_00.jpeg',  
