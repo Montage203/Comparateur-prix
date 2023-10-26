@@ -2,6 +2,14 @@
  const products = [ 
 
 {  
+      category: 'Choco',  
+      name: 'Chocolat au lait 100g Bio Carrefour',  
+      image: 'https://cdn.carrefour.eu/420_06751147_3270190128151_00.jpeg',  
+      price: 1.45, 
+      supermarket: 'Carrefour',  
+      lastModified: new Date('2023-08-08'),  
+    }, 
+{  
       category: 'Aclasser',  
       name: 'Lasagne bolognaise 1kg Everyday',  
       image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/71/94/asset-1817194.jpg',  
