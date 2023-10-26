@@ -3,7 +3,7 @@
 
 {  
       category: 'Pain',  
-      name: 'Pain 600/800g Carrefour',  
+      name: 'Pain 600/800g (Sac 2/3) Carrefour',  
       image: 'https://cdn.carrefour.eu/1200_06675813_T19.jpeg',  
       price: 2.85, 
       supermarket: 'Carrefour-express',  
