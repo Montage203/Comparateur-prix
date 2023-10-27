@@ -2,6 +2,14 @@
  const products = [ 
 
 {  
+      category: 'Aclasser',  
+      name: 'Lasagne bolognaise 1kg Chef select',  
+      image: 'https://be-fr.openfoodfacts.org/images/products/405/648/903/5107/front_fr.5.full.jpg',  
+      price: 3.29, 
+      supermarket: 'Lidl',  
+      lastModified: new Date('2023-10-27'),  
+    }, 
+{  
       category: 'Pizza',  
       name: 'Pizza Margherita x3 3€29',  
       image: 'https://images.openfoodfacts.org/images/products/405/648/944/3025/front_fr.67.full.jpg',  
