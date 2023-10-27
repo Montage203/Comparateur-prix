@@ -2,6 +2,22 @@
  const products = [ 
 
 {  
+      category: 'Pizza',  
+      name: 'Pizza Margherita x3 3€29',  
+      image: 'https://images.openfoodfacts.org/images/products/405/648/944/3025/front_fr.67.full.jpg',  
+      price: 1.1, 
+      supermarket: 'Lidl',  
+      lastModified: new Date('2023-10-27'),  
+    }, 
+{  
+      category: 'Pizza',  
+      name: 'Pizza Bolognaise x2 3€59',  
+      image: 'https://images.openfoodfacts.org/images/products/405/648/927/0508/front_fr.3.full.jpg',  
+      price: 1.79, 
+      supermarket: 'Lidl',  
+      lastModified: new Date('2023-10-27'),  
+    }, 
+{  
       category: 'Aclasser',  
       name: 'Saucisson de jambon 200g Boni',  
       image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/08/17/asset-710817.jpg',  
