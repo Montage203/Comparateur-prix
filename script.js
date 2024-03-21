@@ -234,7 +234,7 @@ ancienprice: 1.75,
    { 
      category: "Choco", 
      name: "Everyday choco tartine 750g", 
-     image: "https://static.colruytgroup.com/images/500x500/std.lang.all/78/71/asset-2747871.jpg", 
+     image: "https://static.colruytgroup.com/images/500x500/std.lang.all/13/82/asset-3421382.jpg", 
      price: 1.99,
 ancienprice: 1.99,
      supermarket: "Colruyt", 
