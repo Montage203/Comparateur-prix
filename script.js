@@ -298,7 +298,7 @@ ancienprice: 2.55,
      image: 
        "https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/8360/1/0/_jcr_content/assets/imported-images/BILD_INTERNET66/8360_vaatwastabletten_2.png/_jcr_content/renditions/opt.1250w.png.res/1688168213861/opt.1250w.png", 
      price: 0.07, 
-     quantity: 18, 
+     quantity: 0, 
      stockThreshold: 10, // Seuil de rupture de stock pour ce produit 
      supermarket: "Aldi", 
      lastModified: new Date("2023-07-22"), 
