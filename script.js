@@ -1,7 +1,7 @@
 // Données des produits 
  const products = [ 
 
-{  
+/*{  
       category: 'Aclasser',  
       name: 'Lasagne bolognaise 1kg Chef select',  
       image: 'https://be-fr.openfoodfacts.org/images/products/405/648/903/5107/front_fr.5.full.jpg',  
@@ -24,7 +24,7 @@
       price: 1.79, 
       supermarket: 'Lidl',  
       lastModified: new Date('2023-10-27'),  
-    }, 
+    }, */
 {  
       category: 'Aclasser',  
       name: 'Saucisson de jambon 200g Boni',  
@@ -32,7 +32,7 @@
       price: 1.29, 
       supermarket: 'Colruyt',  
       lastModified: new Date('2023-08-10'),  
-    }, 
+    }, /*
 {  
       category: 'Pain',  
       name: 'Pain 600/800g (Sac 2/3) Carrefour',  
@@ -48,7 +48,7 @@
       price: 1.45, 
       supermarket: 'Carrefour-express',  
       lastModified: new Date('2023-08-08'),  
-    }, 
+    }, */
 {  
       category: 'Aclasser',  
       name: 'Lasagne bolognaise 1kg Everyday',  
@@ -89,7 +89,7 @@
 ancienprice: 0.55,
      supermarket: 'Colruyt', 
      lastModified: new Date('2023-08-02'), 
-   }, 
+   }, /*
 { 
      category: 'Aclasser', 
      name: 'Sachet fruit réutilisable', 
@@ -116,7 +116,7 @@ lastModified: new Date('2023-08-06'),
 ancienprice: 2.99,
      supermarket: 'Carrefour-express', 
      lastModified: new Date('2023-09-08'), 
-   }, 
+   }, */
 { 
      category: 'Aclasser', 
      name: 'Balade crème culinaire 1L', 
@@ -173,7 +173,7 @@ ancienprice: 2.99,
      price: 4.09, 
      supermarket: 'Colruyt', 
      lastModified: new Date('2023-08-02'), 
-   },  
+   },  /*
  { 
      category: 'Pizza', 
      name: 'Pizza Tonno ×2 3€59', 
@@ -214,7 +214,7 @@ ancienprice: 1.75,
      price: 0.41, 
      supermarket: "Intermarché", 
      lastModified: new Date("2023-07-29"), 
-   }, 
+   }, */
    { 
      category: "Eau", 
      name: "Boni Oiselle 1,5l", 
@@ -239,7 +239,7 @@ ancienprice: 1.75,
 ancienprice: 1.99,
      supermarket: "Colruyt", 
      lastModified: new Date("2023-10-17"), 
-   }, 
+   }, /*
    { 
      category: "Entretien", 
      name: "Apta Lave vaisselle tabs ×60 4€29", 
@@ -298,7 +298,7 @@ ancienprice: 2.55,
      image: 
        "https://www.aldi.be/content/aldi/belgium/promotions/source-localenhancement/2019/2019-01/2019-01-02/vast_assortiment/8360/1/0/_jcr_content/assets/imported-images/BILD_INTERNET66/8360_vaatwastabletten_2.png/_jcr_content/renditions/opt.1250w.png.res/1688168213861/opt.1250w.png", 
      price: 0.07, 
-     /*quantity: 0, */
+     /*quantity: 0, *//*
      stockThreshold: 10, // Seuil de rupture de stock pour ce produit 
      supermarket: "Aldi", 
      lastModified: new Date("2023-07-22"), 
@@ -354,7 +354,7 @@ ancienprice: 2.55,
      price: 0.89, 
      supermarket: "Deliveroo Carrefour-express", 
      lastModified: new Date("2023-08-01"), 
-   }, 
+   }, */
  ]; 
   
  // Fonction pour afficher les catégories 
