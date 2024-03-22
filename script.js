@@ -27,14 +27,6 @@
       lastModified: new Date('2024-03-22'),  
     }, 
   /* --- */
- {  
-      category: 'Aclasser',  
-      name: 'Saucisson de jambon 200g Boni',  
-      image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/08/17/asset-710817.jpg',  
-      price: 1.29, 
-      supermarket: 'Colruyt',  
-      lastModified: new Date('2023-08-10'),  
-    },
 {  
       category: 'Plats préparés',  
       name: 'EVERYDAY lasagne bolognaise 1kg',  
@@ -52,7 +44,15 @@
      ancienprice: 1.99,
      supermarket: "Colruyt", 
      lastModified: new Date("2024-03-22"), 
-   },
+   },/*
+   {  
+      category: 'Aclasser',  
+      name: 'Saucisson de jambon 200g Boni',  
+      image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/08/17/asset-710817.jpg',  
+      price: 1.29, 
+      supermarket: 'Colruyt',  
+      lastModified: new Date('2023-08-10'),  
+    },
 {  
       category: 'Fruit',  
       name: 'Banane Boni ±1kg 1€74 (1€99 le 1kg)',  
@@ -143,7 +143,7 @@
      supermarket: "Colruyt", 
      lastModified: new Date("2023-07-29"), 
    }, 
-
+*/
   
 /*{  
       category: 'Aclasser',  
