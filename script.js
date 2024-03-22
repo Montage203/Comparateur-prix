@@ -7,7 +7,7 @@
       image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/52/56/asset-3305256.jpg',  
       price: 0.99, 
       quantity: 0, 
-      stockThreshold: 1, // Seuil de rupture de stock pour ce produit 
+      stockThreshold: 0, // Seuil de rupture de stock pour ce produit 
       supermarket: 'Colruyt',  
       lastModified: new Date('2024-03-22'),  
     }, 
