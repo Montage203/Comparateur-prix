@@ -27,12 +27,13 @@
       lastModified: new Date('2023-08-10'),  
     },
 {  
-      category: 'Aclasser',  
-      name: 'Lasagne bolognaise 1kg Everyday',  
-      image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/71/94/asset-1817194.jpg',  
-      price: 2.79, 
+      category: 'Plats préparés',  
+      name: 'EVERYDAY lasagne bolognaise 1kg',  
+      image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/10/44/asset-3411044.jpg',  
+      price: 2.69, 
+      ancienprice: 2.79,
       supermarket: 'Colruyt',  
-      lastModified: new Date('2023-08-07'),  
+      lastModified: new Date('2024-03-22'),  
     }, 
 {  
       category: 'Aclasser',  
