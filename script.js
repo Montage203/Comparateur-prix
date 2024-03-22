@@ -3,7 +3,15 @@
 
  {  
       category: 'Pain',  
-      name: 'EVERYDAY pain blanc tranches',  
+      name: 'EVERYDAY pain gris en tranches 800g',  
+      image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/52/56/asset-3305256.jpg',  
+      price: 0.99, 
+      supermarket: 'Colruyt',  
+      lastModified: new Date('2024-03-22'),  
+    }, 
+ {  
+      category: 'Pain',  
+      name: 'EVERYDAY pain blanc tranches 800g',  
       image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/19/72/asset-1871972.jpg',  
       price: 0.99, 
       supermarket: 'Colruyt',  
