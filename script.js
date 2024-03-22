@@ -6,6 +6,8 @@
       name: 'EVERYDAY pain gris en tranches 800g',  
       image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/52/56/asset-3305256.jpg',  
       price: 0.99, 
+      quantity: 0, 
+      stockThreshold: 1, // Seuil de rupture de stock pour ce produit 
       supermarket: 'Colruyt',  
       lastModified: new Date('2024-03-22'),  
     }, 
@@ -14,6 +16,8 @@
       name: 'EVERYDAY pain blanc tranches 800g',  
       image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/19/72/asset-1871972.jpg',  
       price: 0.99, 
+      quantity: 1, 
+      stockThreshold: 1, // Seuil de rupture de stock pour ce produit 
       supermarket: 'Colruyt',  
       lastModified: new Date('2024-03-22'),  
     }, 
@@ -23,6 +27,7 @@
       image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/11/61/asset-3361161.jpg',  
       price: 0.99, 
       ancienprice: 1.15,
+      quantity: 1, 
       supermarket: 'Colruyt',  
       lastModified: new Date('2024-03-22'),  
     }, 
@@ -33,6 +38,8 @@
       image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/10/44/asset-3411044.jpg',  
       price: 2.69, 
       ancienprice: 2.79,
+      quantity: 0, 
+     stockThreshold: 1, // Seuil de rupture de stock pour ce produit 
       supermarket: 'Colruyt',  
       lastModified: new Date('2024-03-22'),  
     },  
@@ -42,6 +49,8 @@
      image: "https://static.colruytgroup.com/images/500x500/std.lang.all/13/82/asset-3421382.jpg", 
      price: 1.98,
      ancienprice: 1.99,
+     quantity: 2, 
+     stockThreshold: 1, // Seuil de rupture de stock pour ce produit 
      supermarket: "Colruyt", 
      lastModified: new Date("2024-03-22"), 
    },/*
