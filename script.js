@@ -31,7 +31,6 @@
       supermarket: 'Colruyt',  
       lastModified: new Date('2024-03-22'),  
     }, 
-  /* --- */
 {  
       category: 'Plats préparés',  
       name: 'EVERYDAY lasagne bolognaise 1kg',  
@@ -53,7 +52,17 @@
      stockThreshold: 1, // Seuil de rupture de stock pour ce produit 
      supermarket: "Colruyt", 
      lastModified: new Date("2024-03-22"), 
-   },/*
+   },
+       { 
+     category: "Sauce", 
+     name: "EVERYDAY sauce bolognaise 990g", 
+     image: "https://static.colruytgroup.com/images/500x500/std.lang.all/62/35/asset-3346235.jpg", 
+     price: 2.06,
+     quantity: 1, 
+     supermarket: "Colruyt", 
+     lastModified: new Date("2024-03-22"), 
+   },
+  /*
    {  
       category: 'Aclasser',  
       name: 'Saucisson de jambon 200g Boni',  
