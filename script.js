@@ -600,6 +600,11 @@ ${product.quantity !== undefined && product.quantity < product.stockThreshold ? 
        image: 
          "https://www.destockplus.com/upload/300112_124446_PEEL_hvuejMpV.jpg", 
      }, 
+         { 
+       name: "Plats préparés", 
+       image: 
+         "https://img.cuisineaz.com/680x357/2016/09/19/i3481-plats-cuisines-l-etiquetage-de-l-origine-des-ingredients-bientot-teste-en-france.jpg", 
+     }, 
 { 
        name: "Aclasser", 
        image: 
