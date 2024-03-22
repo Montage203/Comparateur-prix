@@ -46,11 +46,12 @@
     }, 
 {  
       category: 'Choco',  
-      name: 'Pâte à tartiner noisette 200g Boni',  
-      image: 'https://static.colruytgroup.com/images/646x1000/std.lang.all/83/84/asset-3028384.jpg',  
-      price: 1.97, 
+      name: 'BONI pate à tartiner noisettes 750g',  
+      image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/81/21/asset-3028121.jpg',  
+      price: 2.99, 
+      ancienprice: 1.97,
       supermarket: 'Colruyt',  
-      lastModified: new Date('2023-08-07'),  
+      lastModified: new Date('2024-03-22'),  
     }, 
      { 
      category: "Choco", 
