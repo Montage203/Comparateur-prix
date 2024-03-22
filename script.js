@@ -17,6 +17,15 @@
       supermarket: 'Colruyt',  
       lastModified: new Date('2024-03-22'),  
     }, 
+ {  
+      category: 'Pain',  
+      name: 'EVERYDAY sandwiches au beurre 10pc',  
+      image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/11/61/asset-3361161.jpg',  
+      price: 0.99, 
+      ancienprice: 1.15,
+      supermarket: 'Colruyt',  
+      lastModified: new Date('2024-03-22'),  
+    }, 
   /* --- */
  {  
       category: 'Aclasser',  
@@ -34,14 +43,6 @@
       ancienprice: 2.79,
       supermarket: 'Colruyt',  
       lastModified: new Date('2024-03-22'),  
-    }, 
-{  
-      category: 'Aclasser',  
-      name: 'Sandwich au beurre 10pc Everyday',  
-      image: 'https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/86/34/asset-1228634.jpg',  
-      price: 1.15, 
-      supermarket: 'Colruyt',  
-      lastModified: new Date('2023-08-07'),  
     }, 
 {  
       category: 'Choco',  
