@@ -52,6 +52,15 @@
       supermarket: 'Colruyt',  
       lastModified: new Date('2023-08-07'),  
     }, 
+     { 
+     category: "Choco", 
+     name: "EVERYDAY pâte à tartiner noisettes 750g", 
+     image: "https://static.colruytgroup.com/images/500x500/std.lang.all/13/82/asset-3421382.jpg", 
+     price: 1.98,
+     ancienprice: 1.99,
+     supermarket: "Colruyt", 
+     lastModified: new Date("2024-03-22"), 
+   },
 {  
       category: 'Fruit',  
       name: 'Banane Boni ±1kg 1€74 (1€99 le 1kg)',  
@@ -142,15 +151,7 @@
      supermarket: "Colruyt", 
      lastModified: new Date("2023-07-29"), 
    }, 
-   { 
-     category: "Choco", 
-     name: "Everyday choco tartine 750g", 
-     image: "https://static.colruytgroup.com/images/500x500/std.lang.all/13/82/asset-3421382.jpg", 
-     price: 1.99,
-     ancienprice: 1.99,
-     supermarket: "Colruyt", 
-     lastModified: new Date("2023-10-17"), 
-   },
+
   
 /*{  
       category: 'Aclasser',  
