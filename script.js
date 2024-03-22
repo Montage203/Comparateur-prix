@@ -43,16 +43,7 @@
       ancienprice: 2.79,
       supermarket: 'Colruyt',  
       lastModified: new Date('2024-03-22'),  
-    }, 
-{  
-      category: 'Choco',  
-      name: 'BONI pate à tartiner noisettes 750g',  
-      image: 'https://static.colruytgroup.com/images/500x500/std.lang.all/81/21/asset-3028121.jpg',  
-      price: 2.99, 
-      ancienprice: 1.97,
-      supermarket: 'Colruyt',  
-      lastModified: new Date('2024-03-22'),  
-    }, 
+    },  
      { 
      category: "Choco", 
      name: "EVERYDAY pâte à tartiner noisettes 750g", 
